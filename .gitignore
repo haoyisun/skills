@@ -5,8 +5,7 @@ Thumbs.db
 dist/
 .vitepress/cache/
 .vitepress/dist/
-.scratch/*
-!.scratch/.gitkeep
+.scratch/
 .idea
 .cursor
 .reader/
