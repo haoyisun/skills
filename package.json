@@ -1,0 +1,35 @@
+{
+  "name": "reader-skills",
+  "version": "0.1.0",
+  "private": false,
+  "description": "读者 (Reader): agent skills for reading, learning, and understanding technical material.",
+  "keywords": [
+    "agent-skills",
+    "skills",
+    "reader",
+    "reading",
+    "learning",
+    "open-source",
+    "documentation"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "skills",
+    "docs",
+    "scripts",
+    "CONTEXT.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "validate": "npm run validate:skills && npm run check:i18n",
+    "validate:skills": "node scripts/validate-skills.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "scaffold:skill": "node scripts/scaffold-skill.mjs",
+    "prepublishOnly": "npm run validate"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
