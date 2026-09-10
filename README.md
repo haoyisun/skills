@@ -1,56 +1,50 @@
-[English](./README.md) · [简体中文](./README.zh-CN.md)
+<h1 align="center">Reader</h1>
 
-# Reader
+<p align="center"><strong>Explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
 
-[![skills.sh](https://skills.sh/b/haoyisun/skills)](https://skills.sh/haoyisun/skills)
+<p align="center">
+  <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DBEDFA"></a>
+  <a href="./README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-DFE0E5"></a>
+</p>
 
-**Reader** is a small collection of explicit-only agent skills for reading, learning, and understanding technical material through an AI tool.
+<p align="center">
+  <a href="https://skills.sh/haoyisun/skills"><img alt="skills.sh install count" src="https://skills.sh/b/haoyisun/skills"></a>
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue"></a>
+  <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
+</p>
 
-It covers three different reading needs:
+Reader ships three agent skills that turn raw technical material into a Markdown guide you can follow. Each one reads its source before writing anything, and none of them start on their own.
 
-| Skill | Invocation | Use it when |
+## Skills
+
+| Skill | Source | Output |
 | --- | --- | --- |
-| `read-project` | `/read-project <source>` | You want to understand and get started with a software project from its code and documentation. |
-| `read-standard` | `/read-standard <source>` | You want to learn an article, blog post, book, PDF, local file, or pasted text deeply. |
-| `read-fast` | `/read-fast <source>` | You want a quick, coherent overview you can read in 2–10 minutes. |
+| `read-project` | A codebase: local path, repository URL, GitHub link, or project name | An onboarding, architecture, and business-flow guide |
+| `read-standard` | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
+| `read-fast` | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
 
-All three skills are explicit-only. They are not pulled in automatically by the model; the user starts them with a slash command.
+All three are **explicit-only**. They stay out of the model's reach until you invoke one.
 
-## Why these skills exist
-
-Many readers hit the same walls:
-
-- project documentation is stale, incomplete, or full of unexplained jargon;
-- technical articles mix abbreviations, domain terms, and assumed background;
-- a reader only has ten minutes, but still needs a correct mental model;
-- source material is in one language while the reader is more comfortable in another.
-
-These skills turn that material into a plain-language Markdown guide, without replacing the original source.
-
-## What every skill tries to do
-
-- Match the language of the current conversation; ask once when the language is unclear.
-- Write for the lowest plausible reader, then let experts skim the same text.
-- Preserve accuracy. Separate source-supported facts from inference and unverified areas.
-- Avoid AI-flavored filler. Prefer concrete, connected prose.
-- Put downloaded or generated images in a session-local `assets/` folder.
-- Write artifacts under `.reader/` instead of scattering them through the working tree.
-
-## Install
-
-Install the whole collection:
+## Installation
 
 ```bash
 npx skills@latest add haoyisun/skills
 ```
 
-Install one skill:
+The installer lists what the repository ships, then asks which skills to take and which agents to install them on. `skills` supports 75+ agents, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf, and writes each skill into the directory that agent already reads from.
 
 ```bash
+# Install one skill
 npx skills@latest add haoyisun/skills --skill read-project
+
+# Preview without installing
+npx skills@latest add haoyisun/skills --list
+
+# Install user-level instead of into the current project
+npx skills@latest add haoyisun/skills -g
 ```
 
-Then use it in your AI tool:
+Then invoke a skill:
 
 ```text
 /read-project https://github.com/owner/repo
@@ -58,20 +52,29 @@ Then use it in your AI tool:
 /read-fast ./notes/topic.md
 ```
 
-Codex uses `$read-project`, `$read-standard`, and `$read-fast` for the same three skills.
+Slash-command agents such as Claude Code and Cursor use `/read-project`. Codex uses `$read-project`.
+
+## Design principles
+
+Every skill in this repository follows the same rules.
+
+- **Read the source, not the summary.** `read-project` verifies its claims against code and tests instead of trusting the README. `read-standard` follows the source section by section and keeps each section's reasoning intact.
+- **Separate fact from inference.** Anything the source does not support is labelled as inference or marked unverified.
+- **Write for the lowest plausible reader.** Terms and abbreviations are explained where they first appear, so a newcomer can follow without stopping to search.
+- **Match the language of the conversation.** The source language and the reading language can differ.
+- **Hand back artifacts you own.** Output is plain Markdown under `.reader/`, stored beside the project it describes.
+- **Never replace the source.** The guide is a companion to the original material.
 
 ## Output layout
 
-Artifacts are written under `.reader/`:
-
 ```text
 .reader/
-  projects/   # /read-project
-  deep/       # /read-standard
-  quick/      # /read-fast
+  projects/   # read-project
+  deep/       # read-standard
+  quick/      # read-fast
 ```
 
-Each reading session uses a dated folder:
+Each session gets a dated folder:
 
 ```text
 .reader/deep/2026-09-10-harness-engineering/
@@ -80,7 +83,17 @@ Each reading session uses a dated folder:
     ace.png
 ```
 
-If the current directory is a Git repository and `.gitignore` does not already include `.reader/`, the skill appends it.
+If the working directory is a Git repository and `.gitignore` does not already list `.reader/`, the skill appends it and says so.
+
+## Compatibility
+
+Reader follows the [Agent Skills specification](https://agentskills.io/specification), which is what lets one repository serve many agents. Agent-specific extras sit alongside it:
+
+| Layer | Where it lives | Purpose |
+| --- | --- | --- |
+| Portable | `SKILL.md` frontmatter and body | `name`, `description`, and the instructions. Read by every skills-compatible agent. |
+| Claude Code | `disable-model-invocation: true` in frontmatter | Keeps the skill out of the model's reach. |
+| Codex | `agents/openai.yaml` | Picker metadata and `allow_implicit_invocation: false`. |
 
 ## Documentation
 
@@ -89,7 +102,7 @@ The project documentation follows [Diátaxis](https://diataxis.fr/):
 - [English documentation](./docs/en/index.md)
 - [简体中文文档](./docs/zh/index.md)
 
-English is the canonical README language; Simplified Chinese is kept as a maintained mirror.
+English is the canonical README language. Simplified Chinese is a maintained mirror.
 
 ## Development
 

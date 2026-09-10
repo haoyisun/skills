@@ -1,56 +1,50 @@
-[English](./README.md) · [简体中文](./README.zh-CN.md)
+<h1 align="center">读者 Reader</h1>
 
-# 读者 / Reader
+<p align="center"><strong>只能主动触发的 agent skill，用来阅读、学习和理解技术资料。</strong></p>
 
-[![skills.sh](https://skills.sh/b/haoyisun/skills)](https://skills.sh/haoyisun/skills)
+<p align="center">
+  <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DFE0E5"></a>
+  <a href="./README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-DBEDFA"></a>
+</p>
 
-**读者**是一组小型的、只能主动触发的 agent skill，用来帮助人们通过 AI 工具阅读、学习和理解技术资料。
+<p align="center">
+  <a href="https://skills.sh/haoyisun/skills"><img alt="skills.sh 安装量" src="https://skills.sh/b/haoyisun/skills"></a>
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue"></a>
+  <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
+</p>
 
-它覆盖三种不同的阅读需求：
+读者包含三套 agent skill，把原始技术资料变成一份你可以照着读的 Markdown 指南。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
 
-| Skill | 用法 | 适合什么时候 |
+## Skill 一览
+
+| Skill | 来源 | 产出 |
 | --- | --- | --- |
-| `read-project` | `/read-project <来源>` | 想从代码和文档入手，理解并上手一个软件项目。 |
-| `read-standard` | `/read-standard <来源>` | 想深入学透一篇文章、博客、书、PDF、本地文件或粘贴文本。 |
-| `read-fast` | `/read-fast <来源>` | 只想花 2–10 分钟快速看懂大意和关键概念。 |
+| `read-project` | 一个代码库：本地路径、仓库地址、GitHub 链接或项目名 | 项目上手、架构与业务流指南 |
+| `read-standard` | 技术文章、博客、书籍、PDF、本地文件或粘贴文本 | 逐节覆盖的完整学习指南 |
+| `read-fast` | 同样的来源，但只有几分钟时间 | 2–10 分钟看完的快速理解 |
 
-三套 skill 都是显式触发，模型不会自动调用；用户用斜杠命令主动开始。
-
-## 为什么需要这些 skill
-
-很多读者会撞上同一类问题：
-
-- 项目文档过时、不完整，或者充满没解释的术语；
-- 技术文章混合了大量缩写、专业词和默认背景知识；
-- 读者只有十分钟，但仍然需要一个正确的理解框架；
-- 原文是一种语言，读者更习惯另一种语言。
-
-这些 skill 会把材料整理成一份通俗 Markdown 指南，而不是替代原始来源。
-
-## 每套 skill 都尽量做到
-
-- 跟随当前对话语言；不确定时问一次。
-- 面向最低可能的读者水平写作，让高水平读者也能快速浏览。
-- 保持准确，把“来源支持的事实、推测、未验证内容”分开。
-- 避免 AI 味，不堆砌空洞套话。
-- 图片放在每次阅读会话自己的 `assets/` 目录。
-- 产物统一写到 `.reader/`，不污染工作区。
+三套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
 
 ## 安装
-
-安装全部 skill：
 
 ```bash
 npx skills@latest add haoyisun/skills
 ```
 
-只安装一个 skill：
+安装器会列出仓库里的 skill，然后询问要装哪几个、装到哪些 agent 上。`skills` 支持 75 个以上的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf，并会把每个 skill 写进对应 agent 自己会读取的目录。
 
 ```bash
+# 只装一个 skill
 npx skills@latest add haoyisun/skills --skill read-project
+
+# 只看不装
+npx skills@latest add haoyisun/skills --list
+
+# 装到用户级，而不是当前项目
+npx skills@latest add haoyisun/skills -g
 ```
 
-然后在 AI 工具中使用：
+然后在 AI 工具里调用：
 
 ```text
 /read-project https://github.com/owner/repo
@@ -58,17 +52,26 @@ npx skills@latest add haoyisun/skills --skill read-project
 /read-fast ./notes/topic.md
 ```
 
-在 Codex 里，这三套 skill 的调用写法是 `$read-project`、`$read-standard`、`$read-fast`。
+Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Codex 用 `$read-project`。
+
+## 设计原则
+
+仓库里每套 skill 都遵循同一套规则。
+
+- **读原始来源，不读二手总结。** `read-project` 会用代码和测试去验证结论，而不是只看 README；`read-standard` 逐节跟随原文，保留每一节的推理过程。
+- **区分事实与推测。** 来源没有支持的内容会明确标成推测或未验证。
+- **面向最低可能的读者写作。** 术语和缩写第一次出现时就解释，新手不用停下来搜索。
+- **跟随对话语言。** 原文语言和阅读语言可以不同。
+- **交还你拥有的产物。** 产出是 `.reader/` 下的普通 Markdown，和被描述的项目放在一起。
+- **不替代原始来源。** 指南是原文的伴读材料。
 
 ## 输出目录
 
-产物写到 `.reader/`：
-
 ```text
 .reader/
-  projects/   # /read-project
-  deep/       # /read-standard
-  quick/      # /read-fast
+  projects/   # read-project
+  deep/       # read-standard
+  quick/      # read-fast
 ```
 
 每次阅读使用一个带日期的文件夹：
@@ -80,7 +83,17 @@ npx skills@latest add haoyisun/skills --skill read-project
     ace.png
 ```
 
-如果当前目录是 Git 仓库，且 `.gitignore` 里没有 `.reader/`，skill 会自动追加。
+如果当前目录是 Git 仓库，且 `.gitignore` 里没有 `.reader/`，skill 会追加进去并明确告知。
+
+## 兼容性
+
+读者遵循 [Agent Skills 规范](https://agentskills.io/specification)，这是同一个仓库能服务多种 agent 的原因。各 agent 特有的部分放在规范之外：
+
+| 层 | 位置 | 作用 |
+| --- | --- | --- |
+| 通用 | `SKILL.md` 的 frontmatter 与正文 | `name`、`description` 和具体指令，所有兼容 skills 的 agent 都会读。 |
+| Claude Code | frontmatter 里的 `disable-model-invocation: true` | 让模型无法自行触发这套 skill。 |
+| Codex | `agents/openai.yaml` | 选择器里的显示信息和 `allow_implicit_invocation: false`。 |
 
 ## 文档
 
@@ -89,7 +102,7 @@ npx skills@latest add haoyisun/skills --skill read-project
 - [English documentation](./docs/en/index.md)
 - [简体中文文档](./docs/zh/index.md)
 
-英文是 README 的规范语言，简体中文作为持续维护的镜像文档。
+英文是 README 的规范语言，简体中文作为持续维护的镜像。
 
 ## 开发
 
