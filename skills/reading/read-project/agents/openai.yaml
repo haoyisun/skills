@@ -1,0 +1,6 @@
+interface:
+  display_name: "Read Project"
+  short_description: "Understand and get started with a software project"
+policy:
+  allow_implicit_invocation: false
+

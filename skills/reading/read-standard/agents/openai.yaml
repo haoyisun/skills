@@ -1,0 +1,6 @@
+interface:
+  display_name: "Read Standard"
+  short_description: "Learn technical material deeply"
+policy:
+  allow_implicit_invocation: false
+

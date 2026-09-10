@@ -1,0 +1,6 @@
+interface:
+  display_name: "Read Fast"
+  short_description: "Get a quick overview of technical material"
+policy:
+  allow_implicit_invocation: false
+
