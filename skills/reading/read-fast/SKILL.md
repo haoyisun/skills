@@ -1,6 +1,6 @@
 ---
 name: read-fast
-description: Use when the user invokes /read-fast with a technical article, blog post, book, PDF, local file, or pasted text and wants a quick, coherent overview they can read in 2-10 minutes.
+description: Get a quick, coherent overview of technical material, from an article, blog post, book, PDF, local file, or pasted text, as a guide readable in 2–10 minutes.
 disable-model-invocation: true
 ---
 
@@ -10,8 +10,11 @@ Help a reader understand the main idea and key concepts of technical material qu
 
 ## Invocation
 
+This skill is explicit-only. The model never starts it on its own; the user starts it. The exact syntax depends on the agent:
+
 ```text
-/read-fast <source>
+/read-fast <source>   # slash-command agents such as Claude Code and Cursor
+$read-fast <source>   # Codex
 ```
 
 `<source>` can be a URL, local Markdown or text file, PDF, or pasted long text.
@@ -55,4 +58,3 @@ The deliverable should be readable in **2–10 minutes**.
 - Do not turn a quick read into a full translation or study guide.
 - Do not omit the reasoning chain so much that the main point becomes wrong.
 - Do not add background that is unnecessary for the 2–10 minute reading.
-

@@ -1,6 +1,6 @@
 ---
 name: read-project
-description: Use when the user invokes /read-project with a local path, repository URL, GitHub link, or project name. Read the code and documentation together, then write a beginner-friendly onboarding, architecture, and business-flow guide as Markdown.
+description: Read a software project from a local path, repository URL, GitHub link, or project name, then write a beginner-friendly onboarding, architecture, and business-flow guide as Markdown.
 disable-model-invocation: true
 ---
 
@@ -10,10 +10,11 @@ Help a reader go from "this project exists" to "I know what it does, how it is b
 
 ## Invocation
 
-This skill is explicit-only. The user starts it with:
+This skill is explicit-only. The model never starts it on its own; the user starts it. The exact syntax depends on the agent:
 
 ```text
-/read-project <source>
+/read-project <source>   # slash-command agents such as Claude Code and Cursor
+$read-project <source>   # Codex
 ```
 
 `<source>` can be a local path, a remote URL, a GitHub link, or a project name.
@@ -62,4 +63,3 @@ This skill is explicit-only. The user starts it with:
 - Do not summarize the project to death. The reader wants a usable mental model and runnable next step.
 - Do not invent behavior from the README alone. Verify against code or tests.
 - Do not claim a file path or command works unless the source supports it.
-

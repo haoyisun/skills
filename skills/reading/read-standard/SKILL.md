@@ -1,6 +1,6 @@
 ---
 name: read-standard
-description: Use when the user invokes /read-standard with a technical article, blog post, book, PDF, local file, or pasted text and wants to learn the material deeply. Produce a complete, plain-language, lowest-reader-friendly Markdown study guide.
+description: Learn a piece of technical material deeply, from an article, blog post, book, PDF, local file, or pasted text, and produce a complete plain-language Markdown study guide.
 disable-model-invocation: true
 ---
 
@@ -10,8 +10,11 @@ Help a reader learn a piece of technical material deeply, not just get the gist.
 
 ## Invocation
 
+This skill is explicit-only. The model never starts it on its own; the user starts it. The exact syntax depends on the agent:
+
 ```text
-/read-standard <source>
+/read-standard <source>   # slash-command agents such as Claude Code and Cursor
+$read-standard <source>   # Codex
 ```
 
 `<source>` can be a URL, local Markdown or text file, PDF, or pasted long text.
@@ -67,4 +70,3 @@ This skill must preserve completeness, not produce a summary.
 - Do not skip a section because it seems technical or long.
 - Do not turn the guide into bullet-point cliffs notes.
 - Do not invent background facts. If a knowledge patch is needed, keep it clearly separated from the source's own claims.
-
