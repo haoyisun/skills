@@ -2,6 +2,8 @@
 
 # Reader
 
+[![skills.sh](https://skills.sh/b/haoyisun/skills)](https://skills.sh/haoyisun/skills)
+
 **Reader** is a small collection of explicit-only agent skills for reading, learning, and understanding technical material through an AI tool.
 
 It covers three different reading needs:
@@ -39,13 +41,13 @@ These skills turn that material into a plain-language Markdown guide, without re
 Install the whole collection:
 
 ```bash
-npx skills add haoyisun/skills
+npx skills@latest add haoyisun/skills
 ```
 
 Install one skill:
 
 ```bash
-npx skills add haoyisun/skills --skill read-project
+npx skills@latest add haoyisun/skills --skill read-project
 ```
 
 Then use it in your AI tool:
@@ -55,6 +57,8 @@ Then use it in your AI tool:
 /read-standard https://example.com/deep-article
 /read-fast ./notes/topic.md
 ```
+
+Codex uses `$read-project`, `$read-standard`, and `$read-fast` for the same three skills.
 
 ## Output layout
 
@@ -116,4 +120,3 @@ npm run scaffold:skill -- reading <skill-name>
 ## License
 
 [MIT](./LICENSE)
-

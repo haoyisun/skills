@@ -8,7 +8,7 @@
 ## Install the whole project
 
 ```bash
-npx skills add haoyisun/skills
+npx skills@latest add haoyisun/skills
 ```
 
 The installer lists the available skills. You can install all of them or select only the ones you need.
@@ -16,8 +16,7 @@ The installer lists the available skills. You can install all of them or select 
 ## Install one skill
 
 ```bash
-npx skills add haoyisun/skills --skill read-project
+npx skills@latest add haoyisun/skills --skill read-project
 ```
 
-After installation, use `/read-project`, `/read-standard`, or `/read-fast` in your AI tool.
-
+After installation, invoke a skill by name. Slash-command agents such as Claude Code and Cursor use `/read-project`, `/read-standard`, and `/read-fast`; Codex uses `$read-project`, `$read-standard`, and `$read-fast`.

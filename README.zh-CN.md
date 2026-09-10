@@ -2,6 +2,8 @@
 
 # 读者 / Reader
 
+[![skills.sh](https://skills.sh/b/haoyisun/skills)](https://skills.sh/haoyisun/skills)
+
 **读者**是一组小型的、只能主动触发的 agent skill，用来帮助人们通过 AI 工具阅读、学习和理解技术资料。
 
 它覆盖三种不同的阅读需求：
@@ -39,13 +41,13 @@
 安装全部 skill：
 
 ```bash
-npx skills add haoyisun/skills
+npx skills@latest add haoyisun/skills
 ```
 
 只安装一个 skill：
 
 ```bash
-npx skills add haoyisun/skills --skill read-project
+npx skills@latest add haoyisun/skills --skill read-project
 ```
 
 然后在 AI 工具中使用：
@@ -55,6 +57,8 @@ npx skills add haoyisun/skills --skill read-project
 /read-standard https://example.com/deep-article
 /read-fast ./notes/topic.md
 ```
+
+在 Codex 里，这三套 skill 的调用写法是 `$read-project`、`$read-standard`、`$read-fast`。
 
 ## 输出目录
 
@@ -116,4 +120,3 @@ npm run scaffold:skill -- reading <skill-name>
 ## 许可证
 
 [MIT](./LICENSE)
-

@@ -8,7 +8,7 @@
 ## 安装整个项目
 
 ```bash
-npx skills add haoyisun/skills
+npx skills@latest add haoyisun/skills
 ```
 
 安装器会列出可用的 skill。你可以选择全部安装，也可以只安装需要的 skill。
@@ -16,8 +16,7 @@ npx skills add haoyisun/skills
 ## 只安装某个 skill
 
 ```bash
-npx skills add haoyisun/skills --skill read-project
+npx skills@latest add haoyisun/skills --skill read-project
 ```
 
-安装后，在 AI 工具中使用 `/read-project`、`/read-standard` 或 `/read-fast`。
-
+安装后按名字调用 skill。Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`、`/read-standard`、`/read-fast`；Codex 用 `$read-project`、`$read-standard`、`$read-fast`。
