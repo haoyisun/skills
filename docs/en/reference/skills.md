@@ -2,8 +2,9 @@
 
 | Skill | Directory | Purpose |
 | --- | --- | --- |
-| `reader` | `skills/reading/reader` | Read technical articles, documentation, or dense written material |
-| `open-source-explorer` | `skills/reading/open-source-explorer` | Understand a repository's architecture, entry points, and data flow |
-| `skill-explainer` | `skills/reading/skill-explainer` | Understand an agent skill's purpose, triggers, and risks |
+| `read-project` | `skills/reading/read-project` | Read code and documentation, then write a project onboarding and architecture guide |
+| `read-standard` | `skills/reading/read-standard` | Learn technical articles, blogs, books, or PDFs deeply |
+| `read-fast` | `skills/reading/read-fast` | Write a quick overview readable in 2–10 minutes |
 
-Each skill's entry point is `SKILL.md`. Its `name` field must match the directory name.
+Each skill's entry point is `SKILL.md`. Its `name` field must match the directory name. All three skills have `disable-model-invocation: true`, so they are explicit-only.
+

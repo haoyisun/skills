@@ -1,43 +1,93 @@
-# 读者 / Reader
+[English](./README.md) · [简体中文](./README.zh-CN.md)
 
-**读者**是一组面向 AI 工具的 skill，用来帮助人们阅读、学习和理解技术资料。
+# Reader
 
-它可以陪你阅读：
+**Reader** is a small collection of explicit-only agent skills for reading, learning, and understanding technical material through an AI tool.
 
-- 技术文章与文档
-- 开源项目
-- 其他 agent skill
+It covers three different reading needs:
 
-## 安装
+| Skill | Invocation | Use it when |
+| --- | --- | --- |
+| `read-project` | `/read-project <source>` | You want to understand and get started with a software project from its code and documentation. |
+| `read-standard` | `/read-standard <source>` | You want to learn an article, blog post, book, PDF, local file, or pasted text deeply. |
+| `read-fast` | `/read-fast <source>` | You want a quick, coherent overview you can read in 2–10 minutes. |
+
+All three skills are explicit-only. They are not pulled in automatically by the model; the user starts them with a slash command.
+
+## Why these skills exist
+
+Many readers hit the same walls:
+
+- project documentation is stale, incomplete, or full of unexplained jargon;
+- technical articles mix abbreviations, domain terms, and assumed background;
+- a reader only has ten minutes, but still needs a correct mental model;
+- source material is in one language while the reader is more comfortable in another.
+
+These skills turn that material into a plain-language Markdown guide, without replacing the original source.
+
+## What every skill tries to do
+
+- Match the language of the current conversation; ask once when the language is unclear.
+- Write for the lowest plausible reader, then let experts skim the same text.
+- Preserve accuracy. Separate source-supported facts from inference and unverified areas.
+- Avoid AI-flavored filler. Prefer concrete, connected prose.
+- Put downloaded or generated images in a session-local `assets/` folder.
+- Write artifacts under `.reader/` instead of scattering them through the working tree.
+
+## Install
+
+Install the whole collection:
 
 ```bash
 npx skills add haoyisun/skills
 ```
 
-只安装某个 skill：
+Install one skill:
 
 ```bash
-npx skills add haoyisun/skills --skill reader
+npx skills add haoyisun/skills --skill read-project
 ```
 
-安装后，在你的 AI 工具中调用 `$reader`，然后告诉它你想阅读什么。
+Then use it in your AI tool:
 
-## 当前 skills
+```text
+/read-project https://github.com/owner/repo
+/read-standard https://example.com/deep-article
+/read-fast ./notes/topic.md
+```
 
-| Skill | 用途 |
-| --- | --- |
-| `reader` | 阅读技术文章、文档或密集文字材料 |
-| `open-source-explorer` | 理解开源项目的架构、入口和数据流 |
-| `skill-explainer` | 理解一个 agent skill 的用途、触发条件和风险 |
+## Output layout
 
-## 文档
+Artifacts are written under `.reader/`:
 
-文档采用 [Diátaxis](https://diataxis.fr/) 架构，支持中英文：
+```text
+.reader/
+  projects/   # /read-project
+  deep/       # /read-standard
+  quick/      # /read-fast
+```
 
-- [简体中文](docs/zh/index.md)
-- [English](docs/en/index.md)
+Each reading session uses a dated folder:
 
-## 开发
+```text
+.reader/deep/2026-09-10-harness-engineering/
+  harness-engineering.md
+  assets/
+    ace.png
+```
+
+If the current directory is a Git repository and `.gitignore` does not already include `.reader/`, the skill appends it.
+
+## Documentation
+
+The project documentation follows [Diátaxis](https://diataxis.fr/):
+
+- [English documentation](./docs/en/index.md)
+- [简体中文文档](./docs/zh/index.md)
+
+English is the canonical README language; Simplified Chinese is kept as a maintained mirror.
+
+## Development
 
 ```bash
 npm run validate
@@ -45,6 +95,25 @@ npm run check:i18n
 npm run scaffold:skill -- reading <skill-name>
 ```
 
-## 发布
+`npm run validate` checks every `SKILL.md` and confirms that `docs/en/` and `docs/zh/` have the same page tree.
 
-项目已配置 `package.json`。提交前运行 `npm run validate`，发布 npm 时 `prepublishOnly` 会自动再次校验。
+## Project structure
+
+```text
+.
+├── docs/                    # Diátaxis docs: en/ and zh/
+│   └── adr/                 # Architecture decision records
+├── skills/
+│   └── reading/
+│       ├── read-project/
+│       ├── read-standard/
+│       └── read-fast/
+├── scripts/                 # Validation and scaffolding utilities
+├── CONTEXT.md               # Shared vocabulary for agents
+└── package.json
+```
+
+## License
+
+[MIT](./LICENSE)
+

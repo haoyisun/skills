@@ -1,6 +1,8 @@
 # AGENTS.md
 
-This repository is **Reader** (读者), a collection of agent skills that help people read, learn, and understand technical articles, documentation, open-source projects, and other agent skills.
+This repository is **Reader** (读者), a collection of agent skills that help people read, learn, and understand technical material through an AI tool.
+
+The repository ships three explicit-only reading skills: `read-project`, `read-standard`, and `read-fast`.
 
 ## Agent skills
 
@@ -21,8 +23,12 @@ Single-context layout: one root `CONTEXT.md` plus `docs/adr/`. See `docs/agents/
 ```text
 .
 ├── docs/                  # Diátaxis documentation, zh/ and en/
+│   ├── adr/               # Architecture decision records
+│   ├── zh/
+│   └── en/
 ├── skills/                # Installable agent skills
 ├── scripts/               # Validation and scaffolding utilities
 ├── CONTEXT.md             # Shared domain vocabulary
 └── package.json           # npm package metadata
 ```
+

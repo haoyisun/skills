@@ -1,16 +1,17 @@
 {
   "name": "reader-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
-  "description": "读者 (Reader): agent skills for reading, learning, and understanding technical material.",
+  "description": "读者 (Reader): explicit-only agent skills for reading projects, learning technical material deeply, and getting quick overviews.",
   "keywords": [
     "agent-skills",
     "skills",
     "reader",
     "reading",
     "learning",
-    "open-source",
-    "documentation"
+    "read-project",
+    "read-standard",
+    "read-fast"
   ],
   "license": "MIT",
   "type": "module",
@@ -20,6 +21,7 @@
     "scripts",
     "CONTEXT.md",
     "README.md",
+    "README.zh-CN.md",
     "LICENSE"
   ],
   "scripts": {

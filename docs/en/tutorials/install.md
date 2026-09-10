@@ -16,7 +16,8 @@ The installer lists the available skills. You can install all of them or select 
 ## Install one skill
 
 ```bash
-npx skills add haoyisun/skills --skill reader
+npx skills add haoyisun/skills --skill read-project
 ```
 
-After installation, invoke `$reader` in your AI tool and tell it what you want to read.
+After installation, use `/read-project`, `/read-standard`, or `/read-fast` in your AI tool.
+

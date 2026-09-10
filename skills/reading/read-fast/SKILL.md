@@ -1,0 +1,58 @@
+---
+name: read-fast
+description: Use when the user invokes /read-fast with a technical article, blog post, book, PDF, local file, or pasted text and wants a quick, coherent overview they can read in 2-10 minutes.
+disable-model-invocation: true
+---
+
+# read-fast
+
+Help a reader understand the main idea and key concepts of technical material quickly. This is a short-focus read, not a deep study guide.
+
+## Invocation
+
+```text
+/read-fast <source>
+```
+
+`<source>` can be a URL, local Markdown or text file, PDF, or pasted long text.
+
+## Reader and language defaults
+
+- Assume the reader is short on time and wants the gist plus the key concepts, not mastery.
+- Write for the lowest plausible reader so the output stays understandable.
+- Match the current conversation language. If the language is unclear, ask once.
+
+## Input policy
+
+- Supported: web URLs, local Markdown/plain text, pasted text, and PDFs.
+- Word and PowerPoint: convert when possible; otherwise say so.
+- Video, audio, and scanned images: do not promise deep support.
+
+## Time budget
+
+The deliverable should be readable in **2–10 minutes**.
+
+- Short sources are not forcibly cut.
+- Long sources keep only the main line, key concepts, and conclusions.
+- If a topic cannot be explained accurately in that budget, say what was omitted and suggest `/read-standard`.
+
+## Workflow
+
+1. Read enough of the source to understand its thesis, structure, and key conclusions. For long material, read the introduction, headings, conclusion, and any examples or code that carry the main argument.
+2. Write the deliverable with [references/output-schema.md](references/output-schema.md).
+3. Write to `.reader/quick/<date>-<slug>/<slug>.md`, with images under `assets/`.
+4. If the working directory is a Git repository and `.gitignore` does not contain `.reader/`, append `.reader/` to `.gitignore`. State that this was done.
+
+## Shared writing rules
+
+- Write plain, connected prose. Avoid AI-flavored filler and empty buzzwords.
+- Explain only the terms needed to understand the main argument.
+- Use few images. Add one only when the core logic is unclear without it.
+- Keep a light source header: title, author, link or path, and reading time.
+
+## What not to do
+
+- Do not turn a quick read into a full translation or study guide.
+- Do not omit the reasoning chain so much that the main point becomes wrong.
+- Do not add background that is unnecessary for the 2–10 minute reading.
+

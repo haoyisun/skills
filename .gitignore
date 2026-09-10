@@ -9,3 +9,4 @@ dist/
 !.scratch/.gitkeep
 .idea
 .cursor
+.reader/
