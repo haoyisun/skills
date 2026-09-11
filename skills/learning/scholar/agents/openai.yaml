@@ -1,0 +1,5 @@
+interface:
+  display_name: "Scholar"
+  short_description: "Learn any topic from a goal, with sourced guides"
+policy:
+  allow_implicit_invocation: false

@@ -23,10 +23,20 @@ The repository also ships one shared foundation skill:
 
 It lives at `skills/diagrams/technical-diagrams/` and is installed together with the reading skills from the same repository.
 
+The Scholar family ships one skill:
+
+- `scholar`: turn a learning goal into sourced, illustrated learning material: a quick overview, a complete study guide, or a multi-file handbook.
+
+It lives at `skills/learning/scholar/` and references `technical-diagrams` by name when a diagram helps.
+
 ## Terms
 
 - **Scholar / 学者**: this project and the set of skills it ships.
 - **Reader / 读者**: the reading capability family inside Scholar. It reads source material that already exists and turns it into a guide.
+- **Depth tier / 深度档位**: `quick` (快读), `guide` (通学), or `mastery` (精修). The tier decides the reading time, file shape, review depth, and image budget.
+- **Goal card**: the confirmed learning goal that drives a Scholar session: topic, scope, purpose, tier, time budget, starting point, output shape, language, self-test, illustrations, and source scope.
+- **Source tier**: the S/A/B/C classification used to weigh a source. AI-generated content is always a C-level lead, never evidence.
+- **Claim-source mapping**: the rule that every claim in Scholar output is traceable to a vetted source, with disagreement and uncertainty marked instead of hidden.
 - **Skill**: a self-contained set of agent instructions in a directory containing a `SKILL.md` file.
 - **SKILL.md**: the entry point of a skill. It must contain YAML frontmatter with `name` and `description`.
 - **Explicit-only**: a skill with `disable-model-invocation: true`. It is triggered when the user names it, not automatically by the model.
@@ -43,6 +53,7 @@ It lives at `skills/diagrams/technical-diagrams/` and is installed together with
 - Use `read-project` when the source is a software project.
 - Use `read-standard` when the user wants to learn technical material deeply.
 - Use `read-fast` when the user wants a short, coherent overview.
+- Use `scholar` when the user wants learning material produced from a learning goal rather than a reading of existing material.
 - Do not invent synonyms for these names in issues, docs, or ADRs.
 
 ## Output conventions
@@ -51,6 +62,7 @@ It lives at `skills/diagrams/technical-diagrams/` and is installed together with
 - Project output: `.scholar/projects/<YYYY-MM-DD>-<slug>/`
 - Deep output: `.scholar/deep/<YYYY-MM-DD>-<slug>/`
 - Quick output: `.scholar/quick/<YYYY-MM-DD>-<slug>/`
+- Scholar output: `.scholar/study/<YYYY-MM-DD>-<slug>/`
 - Images: `assets/` inside each session folder.
 - Latin titles become lowercase hyphenated slugs. Chinese titles stay readable in the filename after illegal characters are removed.
 - Diagrams: embedded Mermaid code blocks in the Markdown. `assets/` is only for original images and screenshots.
