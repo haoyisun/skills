@@ -1,15 +1,15 @@
 ---
 goal_card:
-  topic: ""
+  topic: "{{TOPIC}}"
   scope: ""
   purpose: ""
-  tier: guide
+  tier: {{TIER}}
   time_budget: ""
   starting_point: ""
-  output_shape: single-file
-  language: ""
-  self_test: false
-  illustrations: true
+  output_shape: {{OUTPUT_SHAPE}}
+  language: "{{LANGUAGE}}"
+  self_test: {{SELF_TEST}}
+  illustrations: {{ILLUSTRATIONS}}
   source_scope: self-research+user-provided
 ---
 
