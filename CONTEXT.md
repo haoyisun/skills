@@ -21,7 +21,7 @@ The repository also ships one shared foundation skill:
 
 - `technical-diagrams`: Mermaid syntax and C4 architecture guidance for the diagrams that reading skills produce. It is not reader-specific; future non-reader skills may depend on it too.
 
-It lives at `skills/diagrams/technical-diagrams/` and is distributed together with the reading skills in a Skill Pack.
+It lives at `skills/diagrams/technical-diagrams/` and is installed together with the reading skills from the same repository.
 
 ## Terms
 

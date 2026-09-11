@@ -19,11 +19,11 @@ CONTEXT.md 项目共享词汇
 
 ## 一个共用的画图 skill
 
-`technical-diagrams` 是阅读 skills 共用的基础能力，当阅读 skill 认为“画图比文字更清楚”时，会按名字引用它。它集中提供 Mermaid 语法和 C4 架构画法，并在 Skill Pack 里和阅读 skills 一起分发，保证始终可用。它不是阅读专用，后续的非阅读 skill 也可以依赖它。
+`technical-diagrams` 是阅读 skills 共用的基础能力，当阅读 skill 认为“画图比文字更清楚”时，会按名字引用它。它集中提供 Mermaid 语法和 C4 架构画法，并从同一个仓库和阅读 skills 一起安装，保证始终可用。它不是阅读专用，后续的非阅读 skill 也可以依赖它。
 
 ## 为什么 skill 之间按名字引用
 
-skills CLI 安装时会按 skill 名字各自放到独立目录，而不是保留源码里的分类路径。skill 之间的相对路径在安装后会失效，所以一个 skill 需要另一个 skill 时，按名字引用，并在同一个 pack 里一起分发。
+skills CLI 安装时会按 skill 名字各自放到独立目录，而不是保留源码里的分类路径。skill 之间的相对路径在安装后会失效，所以一个 skill 需要另一个 skill 时，按名字引用，并从同一个仓库一起安装。
 
 ## 为什么用 `skills/<category>/<name>`
 

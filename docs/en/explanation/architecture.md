@@ -19,11 +19,11 @@ All three are explicit-only and are invoked as `/read-project`, `/read-standard`
 
 ## One shared diagramming skill
 
-`technical-diagrams` is a shared foundation that the reading skills use by name when they decide a diagram would help. It holds Mermaid syntax and C4 architecture guidance, and it is bundled with the reading skills in a Skill Pack so it is always present. It is not reader-specific, so future non-reader skills can depend on it too.
+`technical-diagrams` is a shared foundation that the reading skills use by name when they decide a diagram would help. It holds Mermaid syntax and C4 architecture guidance, and it is installed with the reading skills from the same repository so it is always present. It is not reader-specific, so future non-reader skills can depend on it too.
 
 ## Why skills reference each other by name
 
-The skills CLI installs each skill into its own directory by skill name, not by its source category path. Relative paths between skill folders do not survive installation, so a skill that needs another skill references it by name and is distributed together with it in the same pack.
+The skills CLI installs each skill into its own directory by skill name, not by its source category path. Relative paths between skill folders do not survive installation, so a skill that needs another skill references it by name and is installed together with it from the same repository.
 
 ## Why `skills/<category>/<name>`
 

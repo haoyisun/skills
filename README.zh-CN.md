@@ -34,7 +34,7 @@ npx skills@latest add haoyisun/skills
 
 安装器会列出仓库里的 skill，然后询问要装哪几个、装到哪些 agent 上。`skills` 支持 75 个以上的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf，并会把每个 skill 写进对应 agent 自己会读取的目录。
 
-阅读 skill 画图时会按名字引用 `technical-diagrams`，所以请把它和阅读 skill 一起安装。推荐使用 Skill Pack，一次装齐四个 skill。
+阅读 skill 画图时会按名字引用 `technical-diagrams`，所以请把它和阅读 skill 一起安装。直接安装整个仓库（`npx skills@latest add haoyisun/skills`）就会一起装上；如果只装单个 skill，记得把 `technical-diagrams` 一并选上。
 
 ```bash
 # 只装一个 skill

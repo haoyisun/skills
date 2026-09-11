@@ -34,7 +34,7 @@ npx skills@latest add haoyisun/skills
 
 The installer lists what the repository ships, then asks which skills to take and which agents to install them on. `skills` supports 75+ agents, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf, and writes each skill into the directory that agent already reads from.
 
-The reading skills reference `technical-diagrams` by name for their diagrams, so install it together with them. The recommended way is the Skill Pack, which keeps all four skills in one install.
+The reading skills reference `technical-diagrams` by name for their diagrams. Installing the whole repository keeps them together: `npx skills@latest add haoyisun/skills`. If you install skills individually, include `technical-diagrams` alongside the reading skill.
 
 ```bash
 # Install one skill

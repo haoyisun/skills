@@ -19,10 +19,10 @@ Add one shared foundation skill, `technical-diagrams`, containing Mermaid syntax
 
 ## Why by-name reference instead of a relative path
 
-The skills CLI installs skills into directories named after the skill, not preserving source category paths. Relative paths between skill folders break after installation, so skills reference each other by name and are distributed together in a Skill Pack.
+The skills CLI installs skills into directories named after the skill, not preserving source category paths. Relative paths between skill folders break after installation, so skills reference each other by name and are installed together from the same repository.
 
 ## Consequences
 
 - The repository gains one shared, non-reader-specific diagramming skill that future skills can depend on.
 - Diagramming knowledge lives in one place instead of being repeated across reading skills.
-- Users must install `technical-diagrams` with the reading skills, which the recommended Skill Pack enforces.
+- Users must install `technical-diagrams` with the reading skills, which installing the whole repository enforces.
