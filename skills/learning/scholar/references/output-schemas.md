@@ -10,6 +10,15 @@ Scholar writes under `.scholar/study/<YYYY-MM-DD>-<slug>/`. The depth tier decid
 - Chapter files use `NN-<slug>.md`, two digits, starting at `01`. `00-prerequisites.md` is reserved for prerequisites.
 - Links between files in a session are relative.
 
+## Session metadata
+
+Every session carries the goal card as YAML frontmatter so it stays machine-checkable:
+
+- `quick` and `guide`: the frontmatter sits at the top of the single material file.
+- `mastery`: the frontmatter sits at the top of `plan.md`.
+
+The body repeats the card in the output language so the reader can check it without reading YAML.
+
 ## quick — one file, about 10 minutes
 
 ```text
@@ -20,7 +29,7 @@ Scholar writes under `.scholar/study/<YYYY-MM-DD>-<slug>/`. The depth tier decid
 
 Sections, in order:
 
-1. Goal card, as a short readable block.
+1. Goal card, as a short readable block (the machine-readable copy is in the frontmatter).
 2. The answer in one sentence.
 3. What it is and why it exists.
 4. The minimum vocabulary the reader needs, defined in place.
@@ -41,7 +50,7 @@ At most one diagram. No self-test unless the goal card turned it on.
 
 Sections, in order:
 
-1. Goal card and reading map: what the reader will be able to do, how to read the material, and the time estimate.
+1. Goal card and reading map: what the reader will be able to do, how to read the material, and the time estimate (the machine-readable card is in the frontmatter).
 2. Prerequisites: what the reader needs first, each explained briefly.
 3. Glossary: a separate section only when there are more than about ten terms; otherwise define terms inline.
 4. Main body: chapters in a deliberate order, each carrying one main line, with knowledge patches where background is missing.

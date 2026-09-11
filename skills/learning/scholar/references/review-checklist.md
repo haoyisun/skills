@@ -79,4 +79,4 @@ When scripts can run, use `scripts/check-session.mjs`:
 node scripts/check-session.mjs .scholar/study/2026-09-11-adr
 ```
 
-It checks the file set, chapter numbering against the plan, glossary coverage, source appendix presence, and plan status values. When scripts cannot run, walk the same checks by hand.
+It checks the file set, chapter numbering against the plan, glossary coverage, source appendix presence, plan status values, and the goal card in the frontmatter. The script recognizes English and Chinese headings; when the output language is different, verify the section names by hand. When scripts cannot run, walk the same checks by hand.

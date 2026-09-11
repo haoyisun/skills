@@ -19,6 +19,16 @@ Scholar (学者) is the umbrella project. Reader (读者) is the reading capabil
 
 All three are explicit-only and are invoked as `/read-project`, `/read-standard`, and `/read-fast`.
 
+## One Scholar skill, three depth tiers
+
+`scholar` starts from a learning goal instead of a source. It confirms a goal card, finds and vets sources, then writes learning material under `.scholar/study/`. One entry command routes to three depth tiers:
+
+- `quick` 快读: one overview, about ten minutes of reading.
+- `guide` 通学: one complete study guide, one to three hours of reading. This is the default.
+- `mastery` 精修: a multi-file handbook for days or weeks of study, resumable from `plan.md`.
+
+The protocols live in the skill's `references/` directory: goal model, question protocol, source evaluation, writing style, glossary and patches, image policy, output schemas, review checklist, and capability degradation. Templates live in `assets/`, and two Node scripts scaffold a session and check a finished one.
+
 ## One shared diagramming skill
 
 `technical-diagrams` is a shared foundation that the reading skills use by name when they decide a diagram would help. It holds Mermaid syntax and C4 architecture guidance, and it is installed with the reading skills from the same repository so it is always present. It is not specific to the reading family, so future Scholar skills can depend on it too.

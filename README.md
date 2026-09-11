@@ -13,20 +13,19 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Scholar is the umbrella project. Its **Reader** (读者) family ships three reading skills that turn raw technical material into a Markdown guide you can follow, plus one shared diagramming skill they call on for clear pictures. Each one reads its source before writing anything, and none of them start on their own.
+Scholar is the umbrella project with two families. **Reader** (读者) turns raw technical material into a Markdown guide you can follow. **Scholar** (学者) produces learning material from a goal: a quick overview, a complete study guide, or a multi-file handbook. Both families read or vet their sources before writing anything, and none of them start on their own.
 
 ## Skills
 
-The three reading skills form the Reader (读者) family. `technical-diagrams` is a shared foundation they call on; other Scholar families can use it too.
+| Skill | Family | Source | Output |
+| --- | --- | --- | --- |
+| `read-project` | Reader | A codebase: local path, repository URL, GitHub link, or project name | An onboarding, architecture, and business-flow guide |
+| `read-standard` | Reader | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
+| `read-fast` | Reader | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
+| `scholar` | Scholar | A topic or learning goal, with optional sources | A quick overview, a complete study guide, or a multi-file handbook |
+| `technical-diagrams` | Shared | Called by `scholar` and the reading skills when a picture helps | Mermaid and C4 diagrams embedded in Markdown |
 
-| Skill | Source | Output |
-| --- | --- | --- |
-| `read-project` | A codebase: local path, repository URL, GitHub link, or project name | An onboarding, architecture, and business-flow guide |
-| `read-standard` | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
-| `read-fast` | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
-| `technical-diagrams` | Called by the reading skills when a picture helps | Mermaid and C4 diagrams embedded in Markdown |
-
-All four are **explicit-only**. They stay out of the model's reach until you invoke one.
+All five are **explicit-only**. They stay out of the model's reach until you invoke one.
 
 ## Installation
 
@@ -36,7 +35,7 @@ npx skills@latest add haoyisun/skills
 
 The installer lists what the repository ships, then asks which skills to take and which agents to install them on. `skills` supports 75+ agents, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf, and writes each skill into the directory that agent already reads from.
 
-The reading skills reference `technical-diagrams` by name for their diagrams. Installing the whole repository keeps them together: `npx skills@latest add haoyisun/skills`. If you install skills individually, include `technical-diagrams` alongside the reading skill.
+`scholar` and the reading skills reference `technical-diagrams` by name for their diagrams. Installing the whole repository keeps them together: `npx skills@latest add haoyisun/skills`. If you install skills individually, include `technical-diagrams` alongside them.
 
 ```bash
 # Install one skill
@@ -55,6 +54,7 @@ Then invoke a skill:
 /read-project https://github.com/owner/repo
 /read-standard https://example.com/deep-article
 /read-fast ./notes/topic.md
+/scholar ADR
 ```
 
 Slash-command agents such as Claude Code and Cursor use `/read-project`. Codex uses `$read-project`.
@@ -68,6 +68,7 @@ Every skill in this repository follows the same rules.
 - **Write for the lowest plausible reader.** Terms and abbreviations are explained where they first appear, so a newcomer can follow without stopping to search.
 - **Match the language of the conversation.** The source language and the reading language can differ.
 - **Hand back artifacts you own.** Output is plain Markdown under `.scholar/`, stored beside the project it describes.
+- **Vet every claim.** `scholar` traces each claim to a fetched source, marks disagreement instead of hiding it, and never treats AI-generated text as evidence.
 - **Never replace the source.** The guide is a companion to the original material.
 
 ## Output layout
@@ -77,6 +78,7 @@ Every skill in this repository follows the same rules.
   projects/   # read-project
   deep/       # read-standard
   quick/      # read-fast
+  study/      # scholar sessions
 ```
 
 Each session gets a dated folder:
@@ -130,6 +132,8 @@ npm run scaffold:skill -- reading <skill-name>
 │   │   ├── read-project/
 │   │   ├── read-standard/
 │   │   └── read-fast/
+│   ├── learning/
+│   │   └── scholar/         # Scholar family
 │   └── diagrams/
 │       └── technical-diagrams/
 ├── scripts/                 # Validation and scaffolding utilities

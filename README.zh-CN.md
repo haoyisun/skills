@@ -13,20 +13,19 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-学者是伞形项目。旗下的**读者 Reader** 能力族包含三套阅读 skill，把原始技术资料变成一份你可以照着读的 Markdown 指南，外加一套它们画图时共用的画图 skill。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
+学者是伞形项目，旗下有两个能力族。**读者 Reader** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者 Scholar** 按学习目标生产学习材料，可以是一篇快速概览、一份完整学习指南，或一套多文件手册。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
 
 ## Skill 一览
 
-三套阅读 skill 组成读者（Reader）能力族；`technical-diagrams` 是它们共用的基础能力，学者旗下的其他能力族也可以使用。
+| Skill | 能力族 | 来源 | 产出 |
+| --- | --- | --- | --- |
+| `read-project` | 读者 | 一个代码库：本地路径、仓库地址、GitHub 链接或项目名 | 项目上手、架构与业务流指南 |
+| `read-standard` | 读者 | 技术文章、博客、书籍、PDF、本地文件或粘贴文本 | 逐节覆盖的完整学习指南 |
+| `read-fast` | 读者 | 同样的来源，但只有几分钟时间 | 2–10 分钟看完的快速理解 |
+| `scholar` | 学者 | 一个主题或学习目标，可附带来源 | 快速概览、完整学习指南或多文件手册 |
+| `technical-diagrams` | 共享 | `scholar` 与阅读 skill 在“画图更清楚”时调用 | 嵌入 Markdown 的 Mermaid 与 C4 图 |
 
-| Skill | 来源 | 产出 |
-| --- | --- | --- |
-| `read-project` | 一个代码库：本地路径、仓库地址、GitHub 链接或项目名 | 项目上手、架构与业务流指南 |
-| `read-standard` | 技术文章、博客、书籍、PDF、本地文件或粘贴文本 | 逐节覆盖的完整学习指南 |
-| `read-fast` | 同样的来源，但只有几分钟时间 | 2–10 分钟看完的快速理解 |
-| `technical-diagrams` | 阅读 skill 在“画图更清楚”时调用 | 嵌入 Markdown 的 Mermaid 与 C4 图 |
-
-四套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
+五套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
 
 ## 安装
 
@@ -36,7 +35,7 @@ npx skills@latest add haoyisun/skills
 
 安装器会列出仓库里的 skill，然后询问要装哪几个、装到哪些 agent 上。`skills` 支持 75 个以上的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf，并会把每个 skill 写进对应 agent 自己会读取的目录。
 
-阅读 skill 画图时会按名字引用 `technical-diagrams`，所以请把它和阅读 skill 一起安装。直接安装整个仓库（`npx skills@latest add haoyisun/skills`）就会一起装上；如果只装单个 skill，记得把 `technical-diagrams` 一并选上。
+`scholar` 和阅读 skill 画图时都会按名字引用 `technical-diagrams`，所以请把它和它们一起安装。直接安装整个仓库（`npx skills@latest add haoyisun/skills`）就会一起装上；如果只装单个 skill，记得把 `technical-diagrams` 一并选上。
 
 ```bash
 # 只装一个 skill
@@ -55,6 +54,7 @@ npx skills@latest add haoyisun/skills -g
 /read-project https://github.com/owner/repo
 /read-standard https://example.com/deep-article
 /read-fast ./notes/topic.md
+/scholar ADR
 ```
 
 Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Codex 用 `$read-project`。
@@ -68,6 +68,7 @@ Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Code
 - **面向最低可能的读者写作。** 术语和缩写第一次出现时就解释，新手不用停下来搜索。
 - **跟随对话语言。** 原文语言和阅读语言可以不同。
 - **交还你拥有的产物。** 产出是 `.scholar/` 下的普通 Markdown，和被描述的项目放在一起。
+- **每个论断都可追溯。** `scholar` 会把论断对应到实际抓取过的来源，把分歧标出来而不是藏起来，绝不把 AI 生成文本当作依据。
 - **不替代原始来源。** 指南是原文的伴读材料。
 
 ## 输出目录
@@ -77,6 +78,7 @@ Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Code
   projects/   # read-project
   deep/       # read-standard
   quick/      # read-fast
+  study/      # scholar 会话
 ```
 
 每次阅读使用一个带日期的文件夹：
@@ -130,6 +132,8 @@ npm run scaffold:skill -- reading <skill-name>
 │   │   ├── read-project/
 │   │   ├── read-standard/
 │   │   └── read-fast/
+│   ├── learning/
+│   │   └── scholar/         # 学者能力族
 │   └── diagrams/
 │       └── technical-diagrams/
 ├── scripts/                 # 校验与脚手架工具

@@ -85,6 +85,8 @@ Deliver a short summary: what was produced, where it lives, which sources were u
 
 Never write a new session over an existing one. When the same date and slug already exist, append `-2`, `-3` instead.
 
+A worked example of `quick` output ships in [assets/example-quick-adr.md](assets/example-quick-adr.md).
+
 ## References
 
 - [references/goal-model.md](references/goal-model.md)

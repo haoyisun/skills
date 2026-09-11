@@ -47,8 +47,11 @@ if (!dirs.includes('assets')) {
 const isMastery = files.includes('plan.md');
 
 function checkGoalCard(text, label) {
-  if (!/goal card/i.test(text)) {
-    errors.push(`${label}: no goal card found.`);
+  if (!/^---\s*\r?\n[\s\S]*?goal_card:/m.test(text)) {
+    errors.push(`${label}: goal_card metadata is missing from the frontmatter.`);
+  }
+  if (!/goal card|学习目标卡|目标卡/i.test(text)) {
+    errors.push(`${label}: no readable goal card found.`);
   }
 }
 
@@ -126,9 +129,9 @@ if (!isMastery) {
   for (const name of chapterFiles) {
     const text = await read(name);
     const links = checkSources(text, name);
-    const hasChapterSources = /sources for this chapter/i.test(text);
+    const hasChapterSources = /sources for this chapter|本章来源/i.test(text);
     if (!hasChapterSources) {
-      notes.push(`${name}: no "Sources for this chapter" heading (${links} link(s) present).`);
+      notes.push(`${name}: no chapter source heading in English or Chinese (${links} link(s) present).`);
     }
   }
 
@@ -145,11 +148,11 @@ if (!isMastery) {
   if (appendixLinks === 0) {
     errors.push('appendix-sources.md: no source links found.');
   }
-  if (!/open questions/i.test(appendix)) {
-    errors.push('appendix-sources.md: missing the "Open questions and disagreements" section.');
+  if (!/open questions|未解问题|争议/i.test(appendix)) {
+    errors.push('appendix-sources.md: missing an "Open questions and disagreements" section (English or Chinese).');
   }
-  if (!/unverified/i.test(appendix)) {
-    errors.push('appendix-sources.md: missing the "Unverified" section.');
+  if (!/unverified|未证实|未验证/i.test(appendix)) {
+    errors.push('appendix-sources.md: missing an "Unverified" section (English or Chinese).');
   }
 
   notes.push(`${chapterFiles.length} chapter file(s), ${glossaryRows.length} glossary term(s), ${appendixLinks} source(s)`);

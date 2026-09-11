@@ -1,6 +1,6 @@
 {
   "name": "scholar-skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "description": "学者 (Scholar): explicit-only agent skills for goal-driven learning and for reading projects, books, and technical material deeply.",
   "keywords": [

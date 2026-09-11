@@ -4,6 +4,8 @@ This repository is **Scholar** (学者), a collection of agent skills that help 
 
 The repository's Reader (读者) family ships three explicit-only reading skills: `read-project`, `read-standard`, and `read-fast`.
 
+The Scholar (学者) family ships `scholar`, which turns a learning goal into sourced learning material: a quick overview, a complete study guide, or a multi-file handbook.
+
 ## Agent skills
 
 ### Issue tracker

@@ -16,8 +16,18 @@
     <YYYY-MM-DD>-<slug>/
       <slug>.md
       assets/
+  study/
+    <YYYY-MM-DD>-<slug>/
+      <slug>.md            # 快读与通学会话
+      README.md            # 精修会话
+      plan.md
+      NN-<slug>.md
+      glossary.md
+      appendix-sources.md
+      assets/
 ```
 
+- `study/` 存放学者会话；材料里的学习目标卡决定它是单文件还是多文件手册。
 - `YYYY-MM-DD` 是生成日期。
 - 英文标题转成小写连字符 slug。
 - 中文标题直接保留在文件名中，只删除非法字符。
