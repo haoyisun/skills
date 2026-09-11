@@ -28,11 +28,11 @@ $read-project <source>   # Codex
 ## Safety boundary
 
 - Local paths: read in place. Do not modify the project.
-- GitHub links: shallow-clone into the session folder under `.reader/projects/`, then delete the clone when done. Keep only the repository URL and commit hash in the output.
+- GitHub links: shallow-clone into the session folder under `.scholar/projects/`, then delete the clone when done. Keep only the repository URL and commit hash in the output.
 - Project names without an owner: search or ask for `owner/repo`; never guess and read the wrong repository.
 - Remote non-GitHub sources: try network access first. If it cannot be read, say so.
 - Allowed commands: read-only commands such as `git log`, `git status`, `rg`, `ls`, and file reads.
-- Do not install dependencies, build, run tests, or start services unless the user explicitly asks. For any write outside `.reader/`, explain first and wait for approval.
+- Do not install dependencies, build, run tests, or start services unless the user explicitly asks. For any write outside `.scholar/`, explain first and wait for approval.
 
 ## Workflow
 
@@ -47,8 +47,8 @@ $read-project <source>   # Codex
 4. Use evidence-driven sampling for large repositories. Read only the files relevant to the user's goal and the main execution paths. Mark unread areas as "not deeply inspected"; do not pretend to have read everything.
 5. Label what is code-supported fact, what is reasonable inference, and what could not be verified.
 6. Build the output following [references/output-schema.md](references/output-schema.md).
-7. Write the deliverable to `.reader/projects/<date>-<slug>/<slug>.md`, with downloaded or generated images under `assets/`.
-8. If the working directory is a Git repository and `.gitignore` does not contain `.reader/`, append `.reader/` to `.gitignore`. State that this was done.
+7. Write the deliverable to `.scholar/projects/<date>-<slug>/<slug>.md`, with downloaded or generated images under `assets/`.
+8. If the working directory is a Git repository and `.gitignore` does not contain `.scholar/`, append `.scholar/` to `.gitignore`. State that this was done.
 9. Delete the cloned source directory, leaving only the Markdown and assets. Keep the repository URL and commit hash in the deliverable.
 
 ## Shared writing rules

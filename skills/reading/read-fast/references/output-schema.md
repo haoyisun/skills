@@ -32,9 +32,8 @@ Point to the source sections worth rereading, or recommend `/read-standard`.
 
 ## Output location and naming
 
-- Root: `.reader/quick/`
+- Root: `.scholar/quick/`
 - Session folder: `<YYYY-MM-DD>-<slug>/`
 - Markdown: `<YYYY-MM-DD>-<slug>.md`
 - Images: `assets/`
 - Keep Latin titles as lowercase hyphenated slugs; keep Chinese titles in the filename with illegal characters removed.
-

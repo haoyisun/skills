@@ -1,10 +1,8 @@
 English · [简体中文](../zh/index.md)
 
-# Reader
+# Scholar
 
-**Reader** is a collection of agent skills for reading, learning, and understanding technical material with an AI tool.
-
-It provides three explicit reading commands:
+**Scholar** (学者) is a collection of agent skills for reading, learning, and understanding technical material with an AI tool. Its Reader (读者) family provides three explicit reading commands:
 
 - `/read-project`: understand and get started with a software project
 - `/read-standard`: learn a technical article, blog post, book, or PDF deeply

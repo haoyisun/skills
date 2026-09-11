@@ -55,8 +55,8 @@ This skill must preserve completeness, not produce a summary.
 
 1. Read the full source or the completed batches before writing the final file.
 2. Build the deliverable with [references/output-schema.md](references/output-schema.md).
-3. Write to `.reader/deep/<date>-<slug>/<slug>.md`, with images under `assets/`.
-4. If the working directory is a Git repository and `.gitignore` does not contain `.reader/`, append `.reader/` to `.gitignore`. State that this was done.
+3. Write to `.scholar/deep/<date>-<slug>/<slug>.md`, with images under `assets/`.
+4. If the working directory is a Git repository and `.gitignore` does not contain `.scholar/`, append `.scholar/` to `.gitignore`. State that this was done.
 
 ## Shared writing rules
 

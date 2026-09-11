@@ -1,11 +1,12 @@
 {
-  "name": "reader-skills",
-  "version": "0.2.0",
+  "name": "scholar-skills",
+  "version": "0.3.0",
   "private": false,
-  "description": "读者 (Reader): explicit-only agent skills for reading projects, learning technical material deeply, and getting quick overviews.",
+  "description": "学者 (Scholar): explicit-only agent skills for goal-driven learning and for reading projects, books, and technical material deeply.",
   "keywords": [
     "agent-skills",
     "skills",
+    "scholar",
     "reader",
     "reading",
     "learning",

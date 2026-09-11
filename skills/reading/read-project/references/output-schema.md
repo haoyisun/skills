@@ -64,9 +64,8 @@ Separate:
 
 ## Output location and naming
 
-- Root: `.reader/projects/`
+- Root: `.scholar/projects/`
 - Session folder: `<YYYY-MM-DD>-<slug>/`
 - Markdown: `<YYYY-MM-DD>-<slug>.md`
 - Images: `assets/`
 - Keep Latin titles as lowercase hyphenated slugs; keep Chinese titles in the filename with illegal characters removed.
-

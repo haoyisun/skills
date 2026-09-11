@@ -6,7 +6,6 @@
 4. If the skill asks for your goal, say whether you want to run it, understand the architecture, contribute, or learn a technique.
 5. Ask the skill to start from the README, manifest files, entry points, and key execution paths instead of the project description alone.
 
-The skill writes to `.reader/projects/` and includes a minimal run path, architecture map, key business flows, glossary, and documentation drift.
+The skill writes to `.scholar/projects/` and includes a minimal run path, architecture map, key business flows, glossary, and documentation drift.
 
 It uses read-only analysis by default and does not install dependencies, build, or run tests.
-

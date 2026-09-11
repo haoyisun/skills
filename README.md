@@ -1,6 +1,6 @@
-<h1 align="center">Reader</h1>
+<h1 align="center">Scholar</h1>
 
-<p align="center"><strong>Explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
+<p align="center"><strong>学者 (Scholar): explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
 
 <p align="center">
   <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DBEDFA"></a>
@@ -13,9 +13,11 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Reader ships three reading skills that turn raw technical material into a Markdown guide you can follow, plus one shared diagramming skill they call on for clear pictures. Each one reads its source before writing anything, and none of them start on their own.
+Scholar is the umbrella project. Its **Reader** (读者) family ships three reading skills that turn raw technical material into a Markdown guide you can follow, plus one shared diagramming skill they call on for clear pictures. Each one reads its source before writing anything, and none of them start on their own.
 
 ## Skills
+
+The three reading skills form the Reader (读者) family. `technical-diagrams` is a shared foundation they call on; other Scholar families can use it too.
 
 | Skill | Source | Output |
 | --- | --- | --- |
@@ -65,13 +67,13 @@ Every skill in this repository follows the same rules.
 - **Separate fact from inference.** Anything the source does not support is labelled as inference or marked unverified.
 - **Write for the lowest plausible reader.** Terms and abbreviations are explained where they first appear, so a newcomer can follow without stopping to search.
 - **Match the language of the conversation.** The source language and the reading language can differ.
-- **Hand back artifacts you own.** Output is plain Markdown under `.reader/`, stored beside the project it describes.
+- **Hand back artifacts you own.** Output is plain Markdown under `.scholar/`, stored beside the project it describes.
 - **Never replace the source.** The guide is a companion to the original material.
 
 ## Output layout
 
 ```text
-.reader/
+.scholar/
   projects/   # read-project
   deep/       # read-standard
   quick/      # read-fast
@@ -80,17 +82,17 @@ Every skill in this repository follows the same rules.
 Each session gets a dated folder:
 
 ```text
-.reader/deep/2026-09-10-harness-engineering/
+.scholar/deep/2026-09-10-harness-engineering/
   harness-engineering.md
   assets/
     ace.png
 ```
 
-If the working directory is a Git repository and `.gitignore` does not already list `.reader/`, the skill appends it and says so.
+If the working directory is a Git repository and `.gitignore` does not already list `.scholar/`, the skill appends it and says so. `.reader/` was the pre-rename output root: existing artifacts are left in place, and both roots stay ignored.
 
 ## Compatibility
 
-Reader follows the [Agent Skills specification](https://agentskills.io/specification), which is what lets one repository serve many agents. Agent-specific extras sit alongside it:
+Scholar follows the [Agent Skills specification](https://agentskills.io/specification), which is what lets one repository serve many agents. Agent-specific extras sit alongside it:
 
 | Layer | Where it lives | Purpose |
 | --- | --- | --- |
@@ -124,7 +126,7 @@ npm run scaffold:skill -- reading <skill-name>
 ├── docs/                    # Diátaxis docs: en/ and zh/
 │   └── adr/                 # Architecture decision records
 ├── skills/
-│   ├── reading/
+│   ├── reading/             # Reader family
 │   │   ├── read-project/
 │   │   ├── read-standard/
 │   │   └── read-fast/

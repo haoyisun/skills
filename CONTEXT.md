@@ -1,11 +1,11 @@
 # CONTEXT.md
 
-This file gives agents a shared vocabulary for the **Reader** (读者) repository.
+This file gives agents a shared vocabulary for the **Scholar** (学者) repository.
 
 
 ## Project
 
-Reader is an open-source collection of agent skills. Its purpose is to help people read, learn, and understand technical material through an AI tool.
+Scholar is an open-source collection of agent skills. Its purpose is to help people read, learn, and understand technical material through an AI tool. Scholar is the umbrella project; **Reader** (读者) is the reading capability family inside it.
 
 ## Skills
 
@@ -19,13 +19,14 @@ Each skill is a directory under `skills/reading/<name>/` containing a required `
 
 The repository also ships one shared foundation skill:
 
-- `technical-diagrams`: Mermaid syntax and C4 architecture guidance for the diagrams that reading skills produce. It is not reader-specific; future non-reader skills may depend on it too.
+- `technical-diagrams`: Mermaid syntax and C4 architecture guidance for the diagrams that reading skills produce. It is not specific to the reading family; future skills may depend on it too.
 
 It lives at `skills/diagrams/technical-diagrams/` and is installed together with the reading skills from the same repository.
 
 ## Terms
 
-- **Reader / 读者**: this project and the set of skills it ships.
+- **Scholar / 学者**: this project and the set of skills it ships.
+- **Reader / 读者**: the reading capability family inside Scholar. It reads source material that already exists and turns it into a guide.
 - **Skill**: a self-contained set of agent instructions in a directory containing a `SKILL.md` file.
 - **SKILL.md**: the entry point of a skill. It must contain YAML frontmatter with `name` and `description`.
 - **Explicit-only**: a skill with `disable-model-invocation: true`. It is triggered when the user names it, not automatically by the model.
@@ -33,7 +34,8 @@ It lives at `skills/diagrams/technical-diagrams/` and is installed together with
 - **Glossary**: a small shared vocabulary produced while reading so later explanations stay consistent.
 - **Claim**: a statement extracted from source material. Claims must be traceable to a source, and assumptions must be marked separately.
 - **Knowledge patch**: plain-language background inserted where the source assumes prior knowledge.
-- **`.reader/`**: the default output root. It contains `projects/`, `deep/`, and `quick/` subfolders.
+- **`.scholar/`**: the default output root. It contains `projects/`, `deep/`, and `quick/` for the reading family, and `study/` for the Scholar family.
+- **Legacy `.reader/`**: the output root used before the Scholar rename. It is not migrated; both roots stay ignored by Git.
 - **By-name reference**: a skill that needs another skill references it by name, not by a relative path, because the skills CLI installs skills into directories named after the skill rather than preserving source category paths.
 
 ## Naming rules
@@ -45,11 +47,10 @@ It lives at `skills/diagrams/technical-diagrams/` and is installed together with
 
 ## Output conventions
 
-- Root: `.reader/`
-- Project output: `.reader/projects/<YYYY-MM-DD>-<slug>/`
-- Deep output: `.reader/deep/<YYYY-MM-DD>-<slug>/`
-- Quick output: `.reader/quick/<YYYY-MM-DD>-<slug>/`
+- Root: `.scholar/`
+- Project output: `.scholar/projects/<YYYY-MM-DD>-<slug>/`
+- Deep output: `.scholar/deep/<YYYY-MM-DD>-<slug>/`
+- Quick output: `.scholar/quick/<YYYY-MM-DD>-<slug>/`
 - Images: `assets/` inside each session folder.
 - Latin titles become lowercase hyphenated slugs. Chinese titles stay readable in the filename after illegal characters are removed.
 - Diagrams: embedded Mermaid code blocks in the Markdown. `assets/` is only for original images and screenshots.
-

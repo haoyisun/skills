@@ -1,4 +1,4 @@
-<h1 align="center">读者 Reader</h1>
+<h1 align="center">学者 Scholar</h1>
 
 <p align="center"><strong>只能主动触发的 agent skill，用来阅读、学习和理解技术资料。</strong></p>
 
@@ -13,9 +13,11 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-读者包含三套阅读 skill，把原始技术资料变成一份你可以照着读的 Markdown 指南，外加一套它们画图时共用的画图 skill。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
+学者是伞形项目。旗下的**读者 Reader** 能力族包含三套阅读 skill，把原始技术资料变成一份你可以照着读的 Markdown 指南，外加一套它们画图时共用的画图 skill。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
 
 ## Skill 一览
+
+三套阅读 skill 组成读者（Reader）能力族；`technical-diagrams` 是它们共用的基础能力，学者旗下的其他能力族也可以使用。
 
 | Skill | 来源 | 产出 |
 | --- | --- | --- |
@@ -65,13 +67,13 @@ Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Code
 - **区分事实与推测。** 来源没有支持的内容会明确标成推测或未验证。
 - **面向最低可能的读者写作。** 术语和缩写第一次出现时就解释，新手不用停下来搜索。
 - **跟随对话语言。** 原文语言和阅读语言可以不同。
-- **交还你拥有的产物。** 产出是 `.reader/` 下的普通 Markdown，和被描述的项目放在一起。
+- **交还你拥有的产物。** 产出是 `.scholar/` 下的普通 Markdown，和被描述的项目放在一起。
 - **不替代原始来源。** 指南是原文的伴读材料。
 
 ## 输出目录
 
 ```text
-.reader/
+.scholar/
   projects/   # read-project
   deep/       # read-standard
   quick/      # read-fast
@@ -80,17 +82,17 @@ Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Code
 每次阅读使用一个带日期的文件夹：
 
 ```text
-.reader/deep/2026-09-10-harness-engineering/
+.scholar/deep/2026-09-10-harness-engineering/
   harness-engineering.md
   assets/
     ace.png
 ```
 
-如果当前目录是 Git 仓库，且 `.gitignore` 里没有 `.reader/`，skill 会追加进去并明确告知。
+如果当前目录是 Git 仓库，且 `.gitignore` 里没有 `.scholar/`，skill 会追加进去并明确告知。`.reader/` 是改名前的输出根目录：已有产物保持原位，两个根目录都会被 Git 忽略。
 
 ## 兼容性
 
-读者遵循 [Agent Skills 规范](https://agentskills.io/specification)，这是同一个仓库能服务多种 agent 的原因。各 agent 特有的部分放在规范之外：
+学者遵循 [Agent Skills 规范](https://agentskills.io/specification)，这是同一个仓库能服务多种 agent 的原因。各 agent 特有的部分放在规范之外：
 
 | 层 | 位置 | 作用 |
 | --- | --- | --- |
@@ -124,7 +126,7 @@ npm run scaffold:skill -- reading <skill-name>
 ├── docs/                    # Diátaxis 文档：en/ 和 zh/
 │   └── adr/                 # 架构决策记录
 ├── skills/
-│   ├── reading/
+│   ├── reading/             # 读者能力族
 │   │   ├── read-project/
 │   │   ├── read-standard/
 │   │   └── read-fast/

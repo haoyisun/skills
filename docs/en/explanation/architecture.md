@@ -9,7 +9,9 @@ scripts/   Validation and scaffolding utilities
 CONTEXT.md Shared project vocabulary
 ```
 
-## Three reading skills
+## Scholar and its families
+
+Scholar (学者) is the umbrella project. Reader (读者) is the reading capability family: it reads material that already exists and turns it into a guide.
 
 - `read-project` helps users read a software project.
 - `read-standard` helps users learn technical material deeply.
@@ -19,7 +21,7 @@ All three are explicit-only and are invoked as `/read-project`, `/read-standard`
 
 ## One shared diagramming skill
 
-`technical-diagrams` is a shared foundation that the reading skills use by name when they decide a diagram would help. It holds Mermaid syntax and C4 architecture guidance, and it is installed with the reading skills from the same repository so it is always present. It is not reader-specific, so future non-reader skills can depend on it too.
+`technical-diagrams` is a shared foundation that the reading skills use by name when they decide a diagram would help. It holds Mermaid syntax and C4 architecture guidance, and it is installed with the reading skills from the same repository so it is always present. It is not specific to the reading family, so future Scholar skills can depend on it too.
 
 ## Why skills reference each other by name
 
@@ -29,9 +31,9 @@ The skills CLI installs each skill into its own directory by skill name, not by 
 
 Category directories exist only to organize browsing. `skills.sh` walks one or two levels deep to find `SKILL.md`, so the category does not affect installation.
 
-## Why all artifacts go under `.reader/`
+## Why all artifacts go under `.scholar/`
 
-Reading artifacts are kept separate from user source code. Type folders under `.reader/` make outputs easy to find and clean up.
+Artifacts are kept separate from user source code. Type folders under `.scholar/` make outputs easy to find and clean up. `.reader/` was the pre-rename root and is left in place.
 
 ## i18n convention
 

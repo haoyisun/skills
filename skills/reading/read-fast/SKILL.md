@@ -43,8 +43,8 @@ The deliverable should be readable in **2–10 minutes**.
 
 1. Read enough of the source to understand its thesis, structure, and key conclusions. For long material, read the introduction, headings, conclusion, and any examples or code that carry the main argument.
 2. Write the deliverable with [references/output-schema.md](references/output-schema.md).
-3. Write to `.reader/quick/<date>-<slug>/<slug>.md`, with images under `assets/`.
-4. If the working directory is a Git repository and `.gitignore` does not contain `.reader/`, append `.reader/` to `.gitignore`. State that this was done.
+3. Write to `.scholar/quick/<date>-<slug>/<slug>.md`, with images under `assets/`.
+4. If the working directory is a Git repository and `.gitignore` does not contain `.scholar/`, append `.scholar/` to `.gitignore`. State that this was done.
 
 ## Shared writing rules
 

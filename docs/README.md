@@ -1,6 +1,6 @@
-# Reader documentation
+# Scholar documentation
 
-This directory contains the user-facing documentation for Reader.
+This directory contains the user-facing documentation for Scholar (学者).
 
 - [English documentation](./en/index.md)
 - [简体中文文档](./zh/index.md)
@@ -32,4 +32,3 @@ docs/
 - Links inside English pages stay in `docs/en/`; links inside Chinese pages stay in `docs/zh/`, except for intentional language switches.
 
 Run `npm run check:i18n` to verify that both documentation trees have the same page structure.
-
