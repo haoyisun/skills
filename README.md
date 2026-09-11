@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Reader ships three agent skills that turn raw technical material into a Markdown guide you can follow. Each one reads its source before writing anything, and none of them start on their own.
+Reader ships three reading skills that turn raw technical material into a Markdown guide you can follow, plus one shared diagramming skill they call on for clear pictures. Each one reads its source before writing anything, and none of them start on their own.
 
 ## Skills
 
@@ -22,8 +22,9 @@ Reader ships three agent skills that turn raw technical material into a Markdown
 | `read-project` | A codebase: local path, repository URL, GitHub link, or project name | An onboarding, architecture, and business-flow guide |
 | `read-standard` | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
 | `read-fast` | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
+| `technical-diagrams` | Called by the reading skills when a picture helps | Mermaid and C4 diagrams embedded in Markdown |
 
-All three are **explicit-only**. They stay out of the model's reach until you invoke one.
+All four are **explicit-only**. They stay out of the model's reach until you invoke one.
 
 ## Installation
 
@@ -32,6 +33,8 @@ npx skills@latest add haoyisun/skills
 ```
 
 The installer lists what the repository ships, then asks which skills to take and which agents to install them on. `skills` supports 75+ agents, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf, and writes each skill into the directory that agent already reads from.
+
+The reading skills reference `technical-diagrams` by name for their diagrams, so install it together with them. The recommended way is the Skill Pack, which keeps all four skills in one install.
 
 ```bash
 # Install one skill
@@ -121,10 +124,12 @@ npm run scaffold:skill -- reading <skill-name>
 ├── docs/                    # Diátaxis docs: en/ and zh/
 │   └── adr/                 # Architecture decision records
 ├── skills/
-│   └── reading/
-│       ├── read-project/
-│       ├── read-standard/
-│       └── read-fast/
+│   ├── reading/
+│   │   ├── read-project/
+│   │   ├── read-standard/
+│   │   └── read-fast/
+│   └── diagrams/
+│       └── technical-diagrams/
 ├── scripts/                 # Validation and scaffolding utilities
 ├── CONTEXT.md               # Shared vocabulary for agents
 └── package.json

@@ -2,6 +2,7 @@
 
 This file gives agents a shared vocabulary for the **Reader** (读者) repository.
 
+
 ## Project
 
 Reader is an open-source collection of agent skills. Its purpose is to help people read, learn, and understand technical material through an AI tool.
@@ -16,6 +17,12 @@ The repository ships three explicit-only reading skills:
 
 Each skill is a directory under `skills/reading/<name>/` containing a required `SKILL.md` file. The `name` in frontmatter must match the directory name.
 
+The repository also ships one shared foundation skill:
+
+- `technical-diagrams`: Mermaid syntax and C4 architecture guidance for the diagrams that reading skills produce. It is not reader-specific; future non-reader skills may depend on it too.
+
+It lives at `skills/diagrams/technical-diagrams/` and is distributed together with the reading skills in a Skill Pack.
+
 ## Terms
 
 - **Reader / 读者**: this project and the set of skills it ships.
@@ -27,6 +34,7 @@ Each skill is a directory under `skills/reading/<name>/` containing a required `
 - **Claim**: a statement extracted from source material. Claims must be traceable to a source, and assumptions must be marked separately.
 - **Knowledge patch**: plain-language background inserted where the source assumes prior knowledge.
 - **`.reader/`**: the default output root. It contains `projects/`, `deep/`, and `quick/` subfolders.
+- **By-name reference**: a skill that needs another skill references it by name, not by a relative path, because the skills CLI installs skills into directories named after the skill rather than preserving source category paths.
 
 ## Naming rules
 
@@ -43,4 +51,5 @@ Each skill is a directory under `skills/reading/<name>/` containing a required `
 - Quick output: `.reader/quick/<YYYY-MM-DD>-<slug>/`
 - Images: `assets/` inside each session folder.
 - Latin titles become lowercase hyphenated slugs. Chinese titles stay readable in the filename after illegal characters are removed.
+- Diagrams: embedded Mermaid code blocks in the Markdown. `assets/` is only for original images and screenshots.
 

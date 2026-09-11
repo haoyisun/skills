@@ -62,8 +62,17 @@ This skill must preserve completeness, not produce a summary.
 
 - Use plain, connected prose. Avoid AI-flavored filler, forced contrasts, and empty buzzwords.
 - Explain "what it is, why it exists, and how it is used" for important concepts.
-- Use original images first; generate an image only when it materially clarifies something.
+- Use original images first; add a generated image only when it materially clarifies something.
 - Keep a light source header: title, author, link or path, and reading time.
+
+## Technical diagrams
+
+When a concept, process, state, or dependency is clearer as a picture, use the shared `technical-diagrams` skill by name. It provides Mermaid syntax and C4 architecture guidance.
+
+- Choose flowchart, sequence, state, or class/ER diagrams only when prose is not enough.
+- Keep original source images in place; do not replace them with a diagram unless the diagram is clearer.
+- Draw the smallest diagram that helps. Keep labels in the conversation language and explain every diagram in the surrounding text.
+- If the `technical-diagrams` skill is unavailable, keep a minimal inline Mermaid block and still follow its style rules.
 
 ## What not to do
 

@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-读者包含三套 agent skill，把原始技术资料变成一份你可以照着读的 Markdown 指南。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
+读者包含三套阅读 skill，把原始技术资料变成一份你可以照着读的 Markdown 指南，外加一套它们画图时共用的画图 skill。每套 skill 都会先读原始来源再动笔，而且都不会自行触发。
 
 ## Skill 一览
 
@@ -22,8 +22,9 @@
 | `read-project` | 一个代码库：本地路径、仓库地址、GitHub 链接或项目名 | 项目上手、架构与业务流指南 |
 | `read-standard` | 技术文章、博客、书籍、PDF、本地文件或粘贴文本 | 逐节覆盖的完整学习指南 |
 | `read-fast` | 同样的来源，但只有几分钟时间 | 2–10 分钟看完的快速理解 |
+| `technical-diagrams` | 阅读 skill 在“画图更清楚”时调用 | 嵌入 Markdown 的 Mermaid 与 C4 图 |
 
-三套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
+四套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
 
 ## 安装
 
@@ -32,6 +33,8 @@ npx skills@latest add haoyisun/skills
 ```
 
 安装器会列出仓库里的 skill，然后询问要装哪几个、装到哪些 agent 上。`skills` 支持 75 个以上的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf，并会把每个 skill 写进对应 agent 自己会读取的目录。
+
+阅读 skill 画图时会按名字引用 `technical-diagrams`，所以请把它和阅读 skill 一起安装。推荐使用 Skill Pack，一次装齐四个 skill。
 
 ```bash
 # 只装一个 skill
@@ -121,10 +124,12 @@ npm run scaffold:skill -- reading <skill-name>
 ├── docs/                    # Diátaxis 文档：en/ 和 zh/
 │   └── adr/                 # 架构决策记录
 ├── skills/
-│   └── reading/
-│       ├── read-project/
-│       ├── read-standard/
-│       └── read-fast/
+│   ├── reading/
+│   │   ├── read-project/
+│   │   ├── read-standard/
+│   │   └── read-fast/
+│   └── diagrams/
+│       └── technical-diagrams/
 ├── scripts/                 # 校验与脚手架工具
 ├── CONTEXT.md               # 面向 agent 的共享词汇
 └── package.json

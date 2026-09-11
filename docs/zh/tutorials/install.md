@@ -13,6 +13,8 @@ npx skills@latest add haoyisun/skills
 
 安装器会列出可用的 skill。你可以选择全部安装，也可以只安装需要的 skill。
 
+`read-project`、`read-standard`、`read-fast` 画图时依赖 `technical-diagrams`。请把它和阅读 skills 一起安装，或使用 Skill Pack 一次装好。
+
 ## 只安装某个 skill
 
 ```bash

@@ -55,8 +55,16 @@ $read-project <source>   # Codex
 
 - Explain terms and abbreviations where they first appear, as "Term (English full name): plain explanation".
 - Do not use AI-flavored filler, forced triads, or empty buzzwords. Write in connected, concrete prose. Simple examples are welcome.
-- Use original images when available and useful. Generate an image only when a diagram would materially reduce confusion. Put images in `assets/` and use relative links.
+- Use original images when available and useful. Put downloaded or generated images in `assets/` and link them relatively.
 - Put only a light source header in the output: title, author/project, link or path, and reading time.
+
+## Technical diagrams
+
+When a diagram would make the architecture or a flow clearer than prose, use the shared `technical-diagrams` skill by name. It provides Mermaid syntax and C4 architecture guidance.
+
+- Prefer a C4 System Context diagram first, then a Container diagram for multi-service systems, then a sequence or flowchart for the core mechanism walkthrough.
+- Draw the smallest diagram that helps. Keep labels in the conversation language and explain every diagram in the surrounding text.
+- Do not add a diagram only for decoration. If the `technical-diagrams` skill is unavailable, keep a minimal inline Mermaid block and still follow its style rules.
 
 ## What not to do
 

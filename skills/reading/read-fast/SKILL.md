@@ -53,6 +53,15 @@ The deliverable should be readable in **2–10 minutes**.
 - Use few images. Add one only when the core logic is unclear without it.
 - Keep a light source header: title, author, link or path, and reading time.
 
+## Technical diagrams
+
+Diagrams are almost never needed in a 2–10 minute read. Add at most one when the core logic would otherwise be misunderstood.
+
+- When you do draw, use the shared `technical-diagrams` skill by name for Mermaid syntax and style rules.
+- Prefer a simple flowchart or a single relationship line, not an architecture map.
+- Keep labels in the conversation language and explain the diagram in one sentence.
+- If the `technical-diagrams` skill is unavailable, keep a minimal inline Mermaid block.
+
 ## What not to do
 
 - Do not turn a quick read into a full translation or study guide.

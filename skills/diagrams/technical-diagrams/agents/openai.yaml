@@ -1,0 +1,5 @@
+interface:
+  display_name: "Technical Diagrams"
+  short_description: "Mermaid and C4 diagrams for clear Markdown explanations"
+policy:
+  allow_implicit_invocation: false
