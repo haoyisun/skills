@@ -1,4 +1,4 @@
-<h1 align="center">学者 Scholar</h1>
+<h1 align="center">学者</h1>
 
 <p align="center"><strong>只能主动触发的 agent skill，用来阅读、学习和理解技术资料。</strong></p>
 
@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-学者是伞形项目，旗下有两个能力族。**读者 Reader** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者 Scholar** 按学习目标生产学习材料，可以是一篇快速概览、一份完整学习指南，或一套多文件手册。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
+学者是伞形项目，旗下有两个能力族。**读者** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者** 按学习目标生产学习材料，可以是一篇快速概览、一份完整学习指南，或一套多文件手册。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
 
 ## Skill 一览
 

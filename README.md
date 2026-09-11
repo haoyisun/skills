@@ -1,6 +1,6 @@
 <h1 align="center">Scholar</h1>
 
-<p align="center"><strong>学者 (Scholar): explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
+<p align="center"><strong>Scholar: explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
 
 <p align="center">
   <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DBEDFA"></a>
@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Scholar is the umbrella project with two families. **Reader** (读者) turns raw technical material into a Markdown guide you can follow. **Scholar** (学者) produces learning material from a goal: a quick overview, a complete study guide, or a multi-file handbook. Both families read or vet their sources before writing anything, and none of them start on their own.
+Scholar is the umbrella project with two families. **Reader** turns raw technical material into a Markdown guide you can follow. **Scholar** produces learning material from a goal: a quick overview, a complete study guide, or a multi-file handbook. Both families read or vet their sources before writing anything, and none of them start on their own.
 
 ## Skills
 
