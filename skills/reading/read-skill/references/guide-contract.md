@@ -10,6 +10,7 @@ Every session carries machine-readable frontmatter:
 ---
 skill: read-skill
 tier: full
+verdict: recommended | conditional | not-recommended
 source:
   form: repository | name | path | installed
   resolved: anthropics/skills
@@ -21,6 +22,8 @@ subject: "anthropics/skills"
 ```
 
 The body repeats the useful parts in the output language: which copy was read, the version, and the access date.
+
+`verdict` is machine-readable so the guide can be checked and reused: `recommended` 推荐使用, `conditional` 有条件使用, `not-recommended` 不建议. A finished guide never leaves it `pending`.
 
 ## Evidence tags
 

@@ -12,6 +12,8 @@ Choose one of three, and give both the reasoning and the condition that would ch
 | Recommended with conditions | It is useful but has caveats: it needs companion skills, its trigger is narrow, maintenance is unclear, or a trial is needed before trusting the effects |
 | Not recommended | It does not fit the need, red lines were hit, or the documented behaviour cannot be verified at all |
 
+In the session frontmatter these three map to `verdict: recommended`, `verdict: conditional`, and `verdict: not-recommended`.
+
 Rules:
 
 - Base the verdict on behaviour and evidence, never on star count, fork count, or how polished the README looks.
