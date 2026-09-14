@@ -91,4 +91,4 @@ Never write a new session over an existing one. When the same date and slug alre
 - [references/decision-and-confidence.md](references/decision-and-confidence.md)
 - [references/review-checklist.md](references/review-checklist.md)
 
-Shared protocols live in the `scholarly-standards` skill (source evaluation, writing style, image policy, capability degradation, question protocol), and diagrams come from the `technical-diagrams` skill. Both are installed from the same repository.
+Shared protocols live in the `scholarly-standards` skill (source evaluation, writing style, image policy, capability degradation, question protocol, experiments), and diagrams come from the `technical-diagrams` skill. Both are installed from the same repository.

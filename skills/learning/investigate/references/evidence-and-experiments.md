@@ -1,6 +1,6 @@
 # Evidence and experiments
 
-Evidence for a decision must be checkable. The shared `scholarly-standards` skill defines the S/A/B/C tiers, independence, and citation format. This file adds the evidence table, the E tier for local experiments, and the approval rules for running anything.
+Evidence for a decision must be checkable. The shared `scholarly-standards` skill defines the S/A/B/C tiers, independence, and citation format. This file adds the evidence table and how the E tier is used in a deliverable; the E-tier recording rules and the approval process live in the shared `experiments` protocol.
 
 ## Evidence table
 
@@ -18,35 +18,7 @@ Rules:
 
 ## Local experiments (type E)
 
-Every E entry records:
-
-- the exact command or script;
-- dependency and runtime versions;
-- the environment: operating system, runtime, and hardware where it matters;
-- the date;
-- the observed result, including the relevant output;
-- what the result supports, and what it does not.
-
-Rules:
-
-- A failed experiment is recorded too, together with what it ruled out.
-- A benchmark without environment and version information is not evidence.
-- E supports a statement like "in this environment, this behaved like this". It never replaces an authoritative source explaining the mechanism.
-- Re-running the same command in a different environment creates a new E entry. The old one stays, because it records a different observation.
-
-## Approval and isolation for running anything
-
-Default mode: static research plus read-only commands — `git log`, `rg`, file reads, and fetching documentation.
-
-Anything beyond that — installing dependencies, running the project's tests, benchmarks, spikes, containers — requires all of:
-
-1. state the purpose and the evidence it would produce;
-2. state the impact: writes, network access, time, and anything that touches the user's project;
-3. get explicit user approval;
-4. run in an isolated location, such as a scratch directory, never inside the user's project without agreement;
-5. record the result as an E entry, including failures.
-
-Never install, build, or modify the user's project silently.
+Type E covers observations produced by running something. Record every experiment with the command, dependency versions, environment, date, and result, following the shared `scholarly-standards` experiments protocol. Approval and isolation are mandatory for anything beyond read-only commands.
 
 ## Using E in the deliverable
 

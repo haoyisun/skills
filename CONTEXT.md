@@ -48,7 +48,7 @@ It lives at `skills/standards/scholarly-standards/`.
 - **Investigation brief / 调研任务卡**: the confirmed card that drives an `investigate` session: decision question, subject, grounding, constraints, budget, tier, language, illustrations, run verification, source scope, and exclusions.
 - **Grounding**: how a session is anchored — `project` (a real codebase and its constraints), `standalone` (a technology or practice, no project), or `concept` (a design idea with no reference implementation).
 - **Decision point / 决策点**: a choice the human must settle, recorded with the skill's recommendation, reasoning, and who decides.
-- **Evidence tier E / E 类证据**: a local experiment run with the user's approval, recorded with the command, dependency versions, environment, date, and result.
+- **Evidence tier E / E 类证据**: a local experiment run with the user's approval and recorded with the command, dependency versions, environment, date, and result. The recording and isolation rules live in the shared `scholarly-standards` experiments protocol.
 - **Skill**: a self-contained set of agent instructions in a directory containing a `SKILL.md` file.
 - **SKILL.md**: the entry point of a skill. It must contain YAML frontmatter with `name` and `description`.
 - **Explicit-only**: a skill with `disable-model-invocation: true`. It is triggered when the user names it, not automatically by the model.

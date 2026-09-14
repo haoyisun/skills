@@ -17,6 +17,7 @@ This skill is not a user-facing command. Another skill references it by name whe
 - [references/image-policy.md](references/image-policy.md): the three picture types, per-tier budgets, generation gates, captions and alt text, provenance, and fallbacks.
 - [references/capabilities.md](references/capabilities.md): capability detection and honest degradation when search, fetch, image tools, sub-agents, or script execution are missing.
 - [references/question-protocol.md](references/question-protocol.md): one round of at most five questions, options, labelled inferences, and skip paths.
+- [references/experiments.md](references/experiments.md): when experiments are allowed, how to isolate them, and how to record type E evidence.
 
 ## Rules
 
