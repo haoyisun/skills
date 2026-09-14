@@ -7,3 +7,4 @@ If this is your first time using the project, complete these in order.
 3. Learn a piece of technical material deeply
 4. Get a quick overview of technical material
 5. Learn something new with Scholar
+6. Research a technical question with investigate

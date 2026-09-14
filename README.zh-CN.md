@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-学者是伞形项目，旗下有两个能力族。**读者** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者** 按学习目标生产学习材料，可以是一篇快速概览、一份完整学习指南，或一套多文件手册。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
+学者是伞形项目，旗下有两个能力族。**读者** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者** 能力族把目标或决策变成有来源的材料：`scholar` 产出学习材料，`investigate` 产出经过校验的设计方案或实施方案。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
 
 ## Skill 一览
 
@@ -23,9 +23,11 @@
 | `read-standard` | 读者 | 技术文章、博客、书籍、PDF、本地文件或粘贴文本 | 逐节覆盖的完整学习指南 |
 | `read-fast` | 读者 | 同样的来源，但只有几分钟时间 | 2–10 分钟看完的快速理解 |
 | `scholar` | 学者 | 一个主题或学习目标，可附带来源 | 快速概览、完整学习指南或多文件手册 |
+| `investigate` | 学者 | 一个决策问题、一门技术、一个项目或一个概念 | 候选方案对比加设计方案与实施方案 |
+| `scholarly-standards` | 共享 | 由 `scholar` 与 `investigate` 按名字引用 | 两者共用的信源、写作、图片、能力与提问协议 |
 | `technical-diagrams` | 共享 | `scholar` 与阅读 skill 在“画图更清楚”时调用 | 嵌入 Markdown 的 Mermaid 与 C4 图 |
 
-五套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
+七套 skill 都是**只能主动触发**，在你调用之前不会进入模型的视野。
 
 ## 安装
 
@@ -35,7 +37,7 @@ npx skills@latest add haoyisun/skills
 
 安装器会列出仓库里的 skill，然后询问要装哪几个、装到哪些 agent 上。`skills` 支持 75 个以上的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf，并会把每个 skill 写进对应 agent 自己会读取的目录。
 
-`scholar` 和阅读 skill 画图时都会按名字引用 `technical-diagrams`，所以请把它和它们一起安装。直接安装整个仓库（`npx skills@latest add haoyisun/skills`）就会一起装上；如果只装单个 skill，记得把 `technical-diagrams` 一并选上。
+`scholar`、`investigate` 和阅读 skill 都会按名字引用 `technical-diagrams` 与 `scholarly-standards`，所以请把它们一起安装。直接安装整个仓库（`npx skills@latest add haoyisun/skills`）就会一起装上；如果只装单个 skill，记得把这两套共享 skill 一并选上。
 
 ```bash
 # 只装一个 skill

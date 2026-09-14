@@ -13,6 +13,7 @@ The Reader (读者) family reads material that already exists:
 The Scholar family produces learning material from a goal:
 
 - `/scholar`: learn a concept or knowledge system, from a ten-minute overview to a multi-week handbook
+- `/investigate`: research a technical question and produce a verified design or implementation plan
 
 ## Documentation
 

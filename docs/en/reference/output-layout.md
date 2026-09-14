@@ -25,9 +25,19 @@ All artifacts are written under `.scholar/` in the current workspace:
       glossary.md
       appendix-sources.md
       assets/
+  research/
+    <YYYY-MM-DD>-<slug>/
+      <slug>.md            # brief and plan sessions
+      README.md            # dossier sessions
+      plan.md
+      NN-<slug>.md
+      glossary.md
+      appendix-sources.md
+      assets/
 ```
 
 - `study/` holds Scholar sessions; the goal card in the material decides whether the session is a single file or a multi-file handbook.
+- `research/` holds investigate sessions; the task card decides whether the session is a brief, a plan, or a multi-file dossier.
 - `YYYY-MM-DD` is the generation date.
 - English titles become lowercase hyphenated slugs.
 - Chinese titles stay readable in the filename after illegal characters are removed.

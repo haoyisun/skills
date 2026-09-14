@@ -13,7 +13,7 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Scholar is the umbrella project with two families. **Reader** turns raw technical material into a Markdown guide you can follow. **Scholar** produces learning material from a goal: a quick overview, a complete study guide, or a multi-file handbook. Both families read or vet their sources before writing anything, and none of them start on their own.
+Scholar is the umbrella project with two families. **Reader** turns raw technical material into a Markdown guide you can follow. The **Scholar** family turns a goal or a decision into sourced material: `scholar` writes learning material, and `investigate` writes a verified design or implementation plan. Both families read or vet their sources before writing anything, and none of them start on their own.
 
 ## Skills
 
@@ -23,9 +23,11 @@ Scholar is the umbrella project with two families. **Reader** turns raw technica
 | `read-standard` | Reader | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
 | `read-fast` | Reader | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
 | `scholar` | Scholar | A topic or learning goal, with optional sources | A quick overview, a complete study guide, or a multi-file handbook |
+| `investigate` | Scholar | A decision question, a technology, a project, or a concept | An option comparison with a design and implementation plan |
+| `scholarly-standards` | Shared | Referenced by `scholar` and `investigate` | The source, writing, image, capability, and question protocols they follow |
 | `technical-diagrams` | Shared | Called by `scholar` and the reading skills when a picture helps | Mermaid and C4 diagrams embedded in Markdown |
 
-All five are **explicit-only**. They stay out of the model's reach until you invoke one.
+All seven are **explicit-only**. They stay out of the model's reach until you invoke one.
 
 ## Installation
 
@@ -35,7 +37,7 @@ npx skills@latest add haoyisun/skills
 
 The installer lists what the repository ships, then asks which skills to take and which agents to install them on. `skills` supports 75+ agents, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf, and writes each skill into the directory that agent already reads from.
 
-`scholar` and the reading skills reference `technical-diagrams` by name for their diagrams. Installing the whole repository keeps them together: `npx skills@latest add haoyisun/skills`. If you install skills individually, include `technical-diagrams` alongside them.
+`scholar`, `investigate`, and the reading skills reference `technical-diagrams` and `scholarly-standards` by name. Installing the whole repository keeps them together: `npx skills@latest add haoyisun/skills`. If you install skills individually, include both shared skills alongside them.
 
 ```bash
 # Install one skill
