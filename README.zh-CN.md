@@ -25,6 +25,8 @@
 >
 > **只能主动触发。** 八套 skill 都不会自行启动。
 
+**兼容** Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、Windsurf，以及任何遵循 [Agent Skills 规范](https://agentskills.io/specification) 的 agent。
+
 ## Skill 一览
 
 | Skill | 能力族 | 来源 | 产出 |
@@ -114,6 +116,23 @@ Claude Code、Cursor 这类支持斜杠命令的工具用 `/read-project`，Code
 | 通用 | `SKILL.md` 的 frontmatter 与正文 | `name`、`description` 和具体指令，所有兼容 skills 的 agent 都会读。 |
 | Claude Code | frontmatter 里的 `disable-model-invocation: true` | 让模型无法自行触发这套 skill。 |
 | Codex | `agents/openai.yaml` | 选择器里的显示信息和 `allow_implicit_invocation: false`。 |
+
+## 常见问题
+
+**什么是 agent skill？**
+一个包含 `SKILL.md` 的文件夹：YAML frontmatter（`name`、`description`，本仓库还有 `disable-model-invocation`）加上指令与配套文件。遵循 [Agent Skills 规范](https://agentskills.io/specification) 的 agent 会按需加载它。
+
+**怎么安装？**
+`npx skills@latest add haoyisun/skills` 会装上整个仓库，这也是推荐做法：`scholar`、`investigate` 和阅读 skills 都会按名字引用 `scholarly-standards` 与 `technical-diagrams`。只装单个 skill 时，记得把这两个共享 skill 一起选上。
+
+**支持哪些 agent？**
+任何遵循 Agent Skills 规范的 agent，包括 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 和 Windsurf。支持斜杠命令的 agent 用 `/read-standard`，Codex 用 `$read-standard`。`skills` CLI 会把每个 skill 写进对应 agent 会读取的目录。
+
+**这些 skill 会自己触发吗？**
+不会。八套都是只能主动触发：frontmatter 里的 `disable-model-invocation: true`，以及 Codex 元数据里的 `allow_implicit_invocation: false`。你不点名，它们就不会启动。
+
+**有中文版吗？**
+README 与 `docs/` 中英双语维护，skill 的输出会跟随你的对话语言。英文是文档的规范语言。
 
 ## 文档
 

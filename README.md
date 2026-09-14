@@ -25,6 +25,8 @@
 >
 > **Explicit-only.** None of the eight skills start on their own.
 
+**Works with** Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and any agent that follows the [Agent Skills specification](https://agentskills.io/specification).
+
 ## Skills
 
 | Skill | Family | Source | Output |
@@ -114,6 +116,23 @@ Scholar follows the [Agent Skills specification](https://agentskills.io/specific
 | Portable | `SKILL.md` frontmatter and body | `name`, `description`, and the instructions. Read by every skills-compatible agent. |
 | Claude Code | `disable-model-invocation: true` in frontmatter | Keeps the skill out of the model's reach. |
 | Codex | `agents/openai.yaml` | Picker metadata and `allow_implicit_invocation: false`. |
+
+## FAQ
+
+**What is an agent skill?**
+A folder containing a `SKILL.md` file: YAML frontmatter (`name`, `description`, and here also `disable-model-invocation`) plus instructions and supporting files. Any agent that follows the [Agent Skills specification](https://agentskills.io/specification) loads it on demand.
+
+**How do I install these skills?**
+`npx skills@latest add haoyisun/skills` installs the whole repository, which is what we recommend: `scholar`, `investigate`, and the reading skills reference `scholarly-standards` and `technical-diagrams` by name. If you install a single skill, select both shared skills alongside it.
+
+**Which agents are supported?**
+Any agent that follows the Agent Skills specification, including Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Windsurf. Slash-command agents use `/read-standard`; Codex uses `$read-standard`. The `skills` CLI writes each skill into the directory your agent already reads from.
+
+**Do these skills start on their own?**
+No. All eight are explicit-only: `disable-model-invocation: true` in the frontmatter, and `allow_implicit_invocation: false` in the Codex metadata. Nothing runs until you name it.
+
+**Is there a Chinese version?**
+The READMEs and `docs/` are maintained in English and Simplified Chinese, and the skills write their output in the language of your conversation. English is the canonical documentation language.
 
 ## Documentation
 
