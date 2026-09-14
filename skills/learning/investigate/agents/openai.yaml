@@ -1,0 +1,5 @@
+interface:
+  display_name: "Investigate"
+  short_description: "Research a technical question into a verified plan"
+policy:
+  allow_implicit_invocation: false
