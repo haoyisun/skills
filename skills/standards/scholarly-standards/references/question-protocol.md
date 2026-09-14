@@ -24,7 +24,7 @@ Ask the smallest set of questions that pins the goal down, then stop asking and 
 | No topic at all | one question: "What do you want to learn?" | all others until the topic arrives |
 | "You decide" | nothing; infer everything and show the card | all questions |
 
-Self-test is the only preference that always needs an explicit answer to turn on. Ask it as a yes/no inside the round, or leave it off.
+A preference that is off by default — such as self-test questions in learning sessions — only turns on when the user asks for it. Offer it as a yes/no inside the round, or leave it off.
 
 ## Round template
 
@@ -47,7 +47,7 @@ Write the round in the conversation language. Keep it short enough to answer in 
 
 After the answers, show the goal card and ask for one short confirmation. State the tier you derived, why, and what that means for the reader: reading time, file shape, and whether there will be self-test questions. Then stop and wait. Do not start researching while the card is unconfirmed.
 
-When the user does not reply, use the defaults from [goal-model.md](goal-model.md) — `guide`, conversation language, self-test off, illustrations on — and say that you did.
+When the user does not reply, use the fallback defaults defined by the invoking skill's card model — a Scholar learning session falls back to `guide`, an investigation session falls back to `plan` — and say that you did.
 
 ## Anti-patterns
 

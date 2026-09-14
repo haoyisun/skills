@@ -31,12 +31,12 @@ Examples:
 
 These rules hold in every session and are not negotiable.
 
-1. Confirm the learning goal before writing. Follow [references/goal-model.md](references/goal-model.md) and [references/question-protocol.md](references/question-protocol.md).
-2. Never state a claim without a traceable source. Vet sources as described in [references/source-evaluation.md](references/source-evaluation.md). AI-generated content is a lead, never evidence.
+1. Confirm the learning goal before writing. Follow [references/goal-model.md](references/goal-model.md), and use the `scholarly-standards` skill for the question protocol.
+2. Never state a claim without a traceable source. Vet sources with the `scholarly-standards` skill's source-evaluation rules. AI-generated content is a lead, never evidence.
 3. Write for the lowest plausible reader. Explain every term and abbreviation where it first appears, and keep the glossary consistent.
-4. Write plain, connected prose. No AI-flavored filler. Follow [references/writing-style.md](references/writing-style.md).
-5. Every picture is explained in the surrounding prose and traceable to its origin. Follow [references/image-policy.md](references/image-policy.md).
-6. Never fake a capability. When search, fetch, image generation, sub-agents, or script execution is unavailable, follow [references/capabilities.md](references/capabilities.md) and tell the user what changed.
+4. Write plain, connected prose. No AI-flavored filler. Follow the `scholarly-standards` skill's writing contract.
+5. Every picture is explained in the surrounding prose and traceable to its origin. Follow the `scholarly-standards` skill's image policy.
+6. Never fake a capability. When search, fetch, image generation, sub-agents, or script execution is unavailable, follow the `scholarly-standards` skill's capability rules and tell the user what changed.
 7. Write under `.scholar/study/`. Never overwrite an existing session.
 
 ## Workflow
@@ -90,11 +90,8 @@ A worked example of `quick` output ships in [assets/example-quick-adr.md](assets
 ## References
 
 - [references/goal-model.md](references/goal-model.md)
-- [references/question-protocol.md](references/question-protocol.md)
-- [references/source-evaluation.md](references/source-evaluation.md)
-- [references/writing-style.md](references/writing-style.md)
 - [references/glossary-and-patches.md](references/glossary-and-patches.md)
-- [references/image-policy.md](references/image-policy.md)
 - [references/output-schemas.md](references/output-schemas.md)
 - [references/review-checklist.md](references/review-checklist.md)
-- [references/capabilities.md](references/capabilities.md)
+
+The shared protocols live in the `scholarly-standards` skill: source evaluation, writing style, image policy, capability degradation, and the question protocol. It is installed from the same repository.

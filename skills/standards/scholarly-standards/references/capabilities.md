@@ -9,7 +9,7 @@ Scholar runs in many agent tools with different abilities. Detect before promisi
 | Web search | Try a query for the topic | Ask the user for sources or pasted text; do not fill gaps from memory |
 | Web fetch | Try opening one candidate URL | Mark the claim unverified, do not cite unread pages, and ask the user to paste the source |
 | Image generation | Check whether an image tool is available | Use Mermaid, tables, and prose; say so in the summary |
-| Sub-agents | Check whether sub-agent tools exist | Self-review with [review-checklist.md](review-checklist.md) |
+| Sub-agents | Check whether sub-agent tools exist | Self-review with the invoking skill's review checklist |
 | Script execution | Try running one script | Walk the same checks by hand |
 | File writes | Try writing the session folder | Ask the user for a writable path before producing anything else |
 

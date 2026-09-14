@@ -29,6 +29,12 @@ The Scholar family ships one skill:
 
 It lives at `skills/learning/scholar/` and references `technical-diagrams` by name when a diagram helps.
 
+The repository also ships one shared standards skill:
+
+- `scholarly-standards`: the source-evaluation, writing, image, capability, and question protocols used by the Scholar family skills. It is not invoked directly; other skills reference it by name.
+
+It lives at `skills/standards/scholarly-standards/`.
+
 ## Terms
 
 - **Scholar / 学者**: this project and the set of skills it ships.
@@ -37,6 +43,7 @@ It lives at `skills/learning/scholar/` and references `technical-diagrams` by na
 - **Goal card**: the confirmed learning goal that drives a Scholar session: topic, scope, purpose, tier, time budget, starting point, output shape, language, self-test, illustrations, and source scope.
 - **Source tier**: the S/A/B/C classification used to weigh a source. AI-generated content is always a C-level lead, never evidence.
 - **Claim-source mapping**: the rule that every claim in Scholar output is traceable to a vetted source, with disagreement and uncertainty marked instead of hidden.
+- **Shared standards / 共享标准层**: the `scholarly-standards` skill. It holds the protocols that apply to every sourced product in this repository, so the skills do not each keep a copy.
 - **Skill**: a self-contained set of agent instructions in a directory containing a `SKILL.md` file.
 - **SKILL.md**: the entry point of a skill. It must contain YAML frontmatter with `name` and `description`.
 - **Explicit-only**: a skill with `disable-model-invocation: true`. It is triggered when the user names it, not automatically by the model.
