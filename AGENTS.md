@@ -1,10 +1,12 @@
 # AGENTS.md
 
-This repository is **Scholar** (学者), a collection of agent skills that help people read, learn, and understand technical material through an AI tool.
+This repository is **Scholar** (学者), an open-source collection of agent skills that help people read material they already have and turn a goal or a decision into material they can use.
 
-The repository's Reader (读者) family ships three explicit-only reading skills: `read-project`, `read-standard`, and `read-fast`.
+The Reader (读者) family ships four explicit-only reading skills: `read-project`, `read-standard`, `read-fast`, and `read-skill`.
 
-The Scholar (学者) family ships `scholar`, which turns a learning goal into sourced learning material: a quick overview, a complete study guide, or a multi-file handbook.
+The Scholar (学者) family ships `scholar`, which turns a learning goal into sourced learning material, and `investigate`, which turns a technical decision into a verified design and implementation plan.
+
+The shared skills hold what both families use: `scholarly-standards` for the source, writing, image, capability, question, and experiment protocols, and `technical-diagrams` for Mermaid and C4 guidance.
 
 ## Agent skills
 

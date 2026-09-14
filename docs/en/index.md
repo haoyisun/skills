@@ -2,7 +2,7 @@ English · [简体中文](../zh/index.md)
 
 # Scholar
 
-**Scholar** (学者) is a collection of agent skills for reading, learning, and understanding technical material with an AI tool.
+**Scholar** (学者) is an open-source collection of agent skills: read the material you already have, or turn a goal or a decision into material you can use.
 
 The Reader (读者) family reads material that already exists:
 
@@ -11,7 +11,7 @@ The Reader (读者) family reads material that already exists:
 - `/read-fast`: get a quick overview in 2–10 minutes
 - `/read-skill`: read a third-party skill or skill repository and get a usage guide
 
-The Scholar family produces learning material from a goal:
+The Scholar family starts from a goal or a decision, researches its own sources, and produces:
 
 - `/scholar`: learn a concept or knowledge system, from a ten-minute overview to a multi-week handbook
 - `/investigate`: research a technical question and produce a verified design or implementation plan

@@ -1,6 +1,6 @@
 <h1 align="center">学者</h1>
 
-<p align="center"><strong>只能主动触发的 agent skill，用来阅读、学习和理解技术资料。</strong></p>
+<p align="center"><strong>读懂已有的材料，也把目标或决策变成可用的材料。</strong></p>
 
 <p align="center">
   <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DFE0E5"></a>
@@ -13,7 +13,17 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills 规范" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-学者是伞形项目，旗下有两个能力族。**读者** 把原始技术资料变成一份你可以照着读的 Markdown 指南；**学者** 能力族把目标或决策变成有来源的材料：`scholar` 产出学习材料，`investigate` 产出经过校验的设计方案或实施方案。两个能力族都会先读或先校验来源再动笔，而且都不会自行触发。
+**学者**是一个开源 skill 集合：两个能力族，加一套共享基础。
+
+| 能力族 | 你给它什么 | 它给你什么 |
+| --- | --- | --- |
+| **读者 Reader** | 你已经有的对象：代码库、技术文章与书籍、任意技术资料，或者别人的 skill 仓库 | 一份能照着读、照着用的 Markdown 指南 |
+| **学者 Scholar** | 一个学习目标，或者一个待决策的技术问题 | `scholar` 产出有来源、有图解的学习材料；`investigate` 产出经过校验的设计方案与实施方案 |
+| **共享基础** | 两个能力族共用 | 信源、写作与实验标准（`scholarly-standards`），以及 Mermaid / C4 画图能力（`technical-diagrams`） |
+
+> **可追溯。** 每条论述都尽量对应到实际抓取过的来源，未验证处会明确标注，而不是含糊带过。
+>
+> **只能主动触发。** 八套 skill 都不会自行启动。
 
 ## Skill 一览
 

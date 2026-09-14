@@ -5,7 +5,13 @@ This file gives agents a shared vocabulary for the **Scholar** (学者) reposito
 
 ## Project
 
-Scholar is an open-source collection of agent skills. Its purpose is to help people read, learn, and understand technical material through an AI tool. Scholar is the umbrella project; **Reader** (读者) is the reading capability family inside it.
+Scholar is an open-source collection of agent skills. It helps people read material they already have, and turn a goal or a decision into material they can use.
+
+The project has two capability families and one shared foundation:
+
+- **Reader** (读者): reads a source the user points at — a codebase, an article or book, a piece of technical material, or someone else's skill repository — and writes a guide.
+- **Scholar family** (学者能力族): starts from a learning goal or a decision question, researches and vets its own sources, and writes learning material or a design and implementation plan.
+- **Shared foundation**: `scholarly-standards` holds the protocols both families follow, and `technical-diagrams` holds the diagram guidance.
 
 ## Skills
 

@@ -1,6 +1,6 @@
 <h1 align="center">Scholar</h1>
 
-<p align="center"><strong>Scholar: explicit-only agent skills for reading, learning, and understanding technical material.</strong></p>
+<p align="center"><strong>Read the material you have. Turn a goal or a decision into material you can use.</strong></p>
 
 <p align="center">
   <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-DBEDFA"></a>
@@ -13,7 +13,17 @@
   <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent%20Skills-specification-4e6b99"></a>
 </p>
 
-Scholar is the umbrella project with two families. **Reader** turns raw technical material into a Markdown guide you can follow. The **Scholar** family turns a goal or a decision into sourced material: `scholar` writes learning material, and `investigate` writes a verified design or implementation plan. Both families read or vet their sources before writing anything, and none of them start on their own.
+**Scholar** is an open-source collection of agent skills: two capability families and one shared foundation.
+
+| Family | What you give it | What you get |
+| --- | --- | --- |
+| **Reader** | Something you already have: a codebase, an article or book, a piece of technical material, or someone else's skill repository | A Markdown guide you can follow and act on |
+| **Scholar** | A learning goal, or a technical question waiting for a decision | `scholar` produces sourced, illustrated learning material; `investigate` produces a verified design and implementation plan |
+| **Shared foundation** | Used by both families | Source, writing, and experiment standards (`scholarly-standards`), plus Mermaid and C4 diagramming (`technical-diagrams`) |
+
+> **Traceable.** Every claim points back to a source that was actually fetched, and unverified points are marked instead of smoothed over.
+>
+> **Explicit-only.** None of the eight skills start on their own.
 
 ## Skills
 

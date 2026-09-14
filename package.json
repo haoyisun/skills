@@ -2,7 +2,7 @@
   "name": "scholar-skills",
   "version": "0.6.0",
   "private": false,
-  "description": "学者 (Scholar): explicit-only agent skills for goal-driven learning and for reading projects, books, and technical material deeply.",
+  "description": "学者 (Scholar): open-source explicit-only agent skills for reading the material you have, and for turning a goal or a decision into sourced learning material or a design plan.",
   "keywords": [
     "agent-skills",
     "skills",
