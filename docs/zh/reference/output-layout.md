@@ -34,10 +34,18 @@
       glossary.md
       appendix-sources.md
       assets/
+  skills/
+    <YYYY-MM-DD>-<slug>/
+      <slug>.md            # 卡片版与完整版会话
+      README.md            # 超过 12 个 skill 的仓库
+      NN-<skill>.md
+      appendix-sources.md
+      assets/
 ```
 
 - `study/` 存放学者会话；材料里的学习目标卡决定它是单文件还是多文件手册。
 - `research/` 存放调研会话；任务卡决定它是简报、方案还是多文件深研。
+- `skills/` 存放技能导读会话；超过 12 个 skill 的仓库使用多文件形态。
 - `YYYY-MM-DD` 是生成日期。
 - 英文标题转成小写连字符 slug。
 - 中文标题直接保留在文件名中，只删除非法字符。

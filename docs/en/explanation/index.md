@@ -7,4 +7,5 @@ These pages explain why Scholar is designed the way it is and how its parts fit 
 - The Reader family and its three explicit reading skills
 - The Scholar family and its three depth tiers
 - The investigate skill and its three deliverable tiers
+- The read-skill guide and its card format
 - Output layout conventions

@@ -16,8 +16,9 @@ Scholar (学者) is the umbrella project. Reader (读者) is the reading capabil
 - `read-project` helps users read a software project.
 - `read-standard` helps users learn technical material deeply.
 - `read-fast` helps users get a quick overview.
+- `read-skill` reads a third-party skill or skill repository and writes a usage guide.
 
-All three are explicit-only and are invoked as `/read-project`, `/read-standard`, and `/read-fast`.
+All four are explicit-only and are invoked as `/read-project`, `/read-standard`, `/read-fast`, and `/read-skill`.
 
 The Scholar family holds the other two product skills: `scholar` for learning material and `investigate` for decision-oriented research.
 
@@ -43,7 +44,7 @@ Its protocols live in `references/`: research brief, research method, evidence a
 
 ## One shared standards layer
 
-`scholarly-standards` holds the protocols every sourced product follows: source evaluation, writing style, image policy, capability degradation, and the question protocol. `scholar` and `investigate` reference it by name, so the rules are maintained once instead of copied into each skill.
+`scholarly-standards` holds the protocols every sourced product follows: source evaluation, writing style, image policy, capability degradation, the question protocol, and experiments. `scholar`, `investigate`, and `read-skill` reference it by name, so the rules are maintained once instead of copied into each skill.
 
 ## One shared diagramming skill
 

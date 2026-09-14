@@ -9,6 +9,7 @@ The Reader (读者) family reads material that already exists:
 - `/read-project`: understand and get started with a software project
 - `/read-standard`: learn a technical article, blog post, book, or PDF deeply
 - `/read-fast`: get a quick overview in 2–10 minutes
+- `/read-skill`: read a third-party skill or skill repository and get a usage guide
 
 The Scholar family produces learning material from a goal:
 

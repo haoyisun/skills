@@ -9,6 +9,7 @@
 - `/read-project`：理解并上手一个软件项目
 - `/read-standard`：深入学透技术文章、博客、书籍或 PDF
 - `/read-fast`：花 2–10 分钟快速看懂大意和关键概念
+- `/read-skill`：读一个第三方 skill 或 skill 仓库，产出用法导读
 
 学者（Scholar）能力族负责按学习目标生产学习材料：
 

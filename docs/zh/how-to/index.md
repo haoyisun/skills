@@ -5,3 +5,4 @@
 - [快速看懂一篇技术内容](read-fast.md)
 - [用学者学习一个新主题](scholar.md)
 - [用 investigate 调研一个技术问题](investigate.md)
+- [用 read-skill 读一个第三方 skill](read-skill.md)

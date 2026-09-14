@@ -16,8 +16,9 @@ CONTEXT.md 项目共享词汇
 - `read-project` 服务于“要读一个软件项目”的场景；
 - `read-standard` 服务于“要认真学透一篇内容”的场景；
 - `read-fast` 服务于“只想快速看懂”的场景。
+- `read-skill` 读一个第三方 skill 或 skill 仓库，产出用法导读。
 
-三套 skill 都是主动触发，使用 `/read-project`、`/read-standard`、`/read-fast`。
+四套 skill 都是主动触发，使用 `/read-project`、`/read-standard`、`/read-fast` 和 `/read-skill`。
 
 学者能力族还包括另外两套产品 skill：`scholar` 负责学习材料，`investigate` 负责决策导向的调研。
 
@@ -43,7 +44,7 @@ skill 自己的协议放在 `references/` 目录里：目标模型、术语与�
 
 ## 一个共享标准层
 
-`scholarly-standards` 集中放所有有来源产物都要遵循的协议：信源评估、写作契约、图片策略、能力降级与提问协议。`scholar` 与 `investigate` 都按名字引用它，规则只维护一份，不再逐个 skill 复制。
+`scholarly-standards` 集中放所有有来源产物都要遵循的协议：信源评估、写作契约、图片策略、能力降级、提问协议与实验协议。`scholar`、`investigate` 与 `read-skill` 都按名字引用它，规则只维护一份，不再逐个 skill 复制。
 
 ## 一个共用的画图 skill
 

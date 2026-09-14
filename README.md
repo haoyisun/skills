@@ -22,12 +22,13 @@ Scholar is the umbrella project with two families. **Reader** turns raw technica
 | `read-project` | Reader | A codebase: local path, repository URL, GitHub link, or project name | An onboarding, architecture, and business-flow guide |
 | `read-standard` | Reader | A technical article, blog post, book, PDF, local file, or pasted text | A complete study guide, section by section |
 | `read-fast` | Reader | The same sources, when a few minutes is all you have | A 2–10 minute overview of the main idea and key concepts |
+| `read-skill` | Reader | A third-party skill or skill repository | A usage guide: scenarios, installation, effects, composition, and a verdict |
 | `scholar` | Scholar | A topic or learning goal, with optional sources | A quick overview, a complete study guide, or a multi-file handbook |
 | `investigate` | Scholar | A decision question, a technology, a project, or a concept | An option comparison with a design and implementation plan |
 | `scholarly-standards` | Shared | Referenced by `scholar` and `investigate` | The source, writing, image, capability, and question protocols they follow |
 | `technical-diagrams` | Shared | Called by `scholar` and the reading skills when a picture helps | Mermaid and C4 diagrams embedded in Markdown |
 
-All seven are **explicit-only**. They stay out of the model's reach until you invoke one.
+All eight are **explicit-only**. They stay out of the model's reach until you invoke one.
 
 ## Installation
 
