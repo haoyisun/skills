@@ -1,0 +1,5 @@
+interface:
+  display_name: "Read Skill"
+  short_description: "Turn a skill repo into a usage guide"
+policy:
+  allow_implicit_invocation: false

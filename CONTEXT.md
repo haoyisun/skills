@@ -14,6 +14,7 @@ The repository ships three explicit-only reading skills:
 - `read-project`: read a software project from its code and documentation, and produce an onboarding, architecture, and business-flow guide.
 - `read-standard`: read technical articles, blog posts, books, PDFs, local files, or pasted text deeply, and produce a complete study guide.
 - `read-fast`: read technical material quickly, and produce a 2–10 minute overview.
+- `read-skill`: read a third-party skill or skill repository, and produce a usage guide: scenarios, installation, usage, effects, composition, and a verdict.
 
 Each skill is a directory under `skills/reading/<name>/` containing a required `SKILL.md` file. The `name` in frontmatter must match the directory name.
 
@@ -49,6 +50,8 @@ It lives at `skills/standards/scholarly-standards/`.
 - **Grounding**: how a session is anchored — `project` (a real codebase and its constraints), `standalone` (a technology or practice, no project), or `concept` (a design idea with no reference implementation).
 - **Decision point / 决策点**: a choice the human must settle, recorded with the skill's recommendation, reasoning, and who decides.
 - **Evidence tier E / E 类证据**: a local experiment run with the user's approval and recorded with the command, dependency versions, environment, date, and result. The recording and isolation rules live in the shared `scholarly-standards` experiments protocol.
+- **Skill guide / 技能导读**: the artifact `read-skill` produces. It answers what a third-party skill does, when to use it, how to install and invoke it, what it produces, how it combines, and whether it is worth adopting.
+- **Card / 卡片版**: the one-page tier of a skill guide. **Full / 完整版**: the ten-section tier, and the default.
 - **Skill**: a self-contained set of agent instructions in a directory containing a `SKILL.md` file.
 - **SKILL.md**: the entry point of a skill. It must contain YAML frontmatter with `name` and `description`.
 - **Explicit-only**: a skill with `disable-model-invocation: true`. It is triggered when the user names it, not automatically by the model.
@@ -67,6 +70,7 @@ It lives at `skills/standards/scholarly-standards/`.
 - Use `read-fast` when the user wants a short, coherent overview.
 - Use `scholar` when the user wants learning material produced from a learning goal rather than a reading of existing material.
 - Use `investigate` when the user needs a decision-oriented research deliverable: option comparison, design, and implementation plan.
+- Use `read-skill` when the user wants to understand, evaluate, install, or adopt a third-party skill or skill repository.
 - Do not invent synonyms for these names in issues, docs, or ADRs.
 
 ## Output conventions
@@ -77,6 +81,7 @@ It lives at `skills/standards/scholarly-standards/`.
 - Quick output: `.scholar/quick/<YYYY-MM-DD>-<slug>/`
 - Scholar output: `.scholar/study/<YYYY-MM-DD>-<slug>/`
 - Investigation output: `.scholar/research/<YYYY-MM-DD>-<slug>/`
+- Skill-guide output: `.scholar/skills/<YYYY-MM-DD>-<slug>/`
 - Images: `assets/` inside each session folder.
 - Latin titles become lowercase hyphenated slugs. Chinese titles stay readable in the filename after illegal characters are removed.
 - Diagrams: embedded Mermaid code blocks in the Markdown. `assets/` is only for original images and screenshots.
