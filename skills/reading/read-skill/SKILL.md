@@ -1,6 +1,6 @@
 ---
 name: read-skill
-description: Turn a third-party skill or skill repository into a usage guide: what it does, when to use it, how to install it, what it produces, how it combines with other skills, and whether it is worth adopting.
+description: "Turn a third-party skill or skill repository into a usage guide: what it does, when to use it, how to install it, what it produces, how it combines with other skills, and whether it is worth adopting."
 disable-model-invocation: true
 ---
 

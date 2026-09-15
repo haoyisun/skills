@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: Research a technical question and produce a verified, illustrated design or implementation plan. Use when a decision must be made: comparing technologies, studying an open-source project, or turning a concept into an implementable design.
+description: "Research a technical question and produce a verified, illustrated design or implementation plan. Use when a decision must be made: comparing technologies, studying an open-source project, or turning a concept into an implementable design."
 disable-model-invocation: true
 ---
 
